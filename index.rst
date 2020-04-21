@@ -21,6 +21,7 @@
   flow_secure_fiesta/flow_secure_fiesta
   flow_isolate_fiesta/flow_isolate_fiesta
   cloning_with_clam/cloning_with_calm
+  era_rest_api/era_rest_api
 
 .. toctree::
   :maxdepth: 2
