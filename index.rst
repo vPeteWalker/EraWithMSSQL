@@ -7,10 +7,10 @@
    :hidden:
 
    gettingstarted/gettingstarted
-   mssqldeploy/mssqldeploy
+   deploy_mssql/deploy_mssql
+   admin_mssqldb/admin_mssqldb
+   deploy_mssql_era/deploy_mssql_era
    aag/aag
-   flow_secure_fiesta/flow_secure_fiesta
-   flow_isolate_fiesta/flow_isolate_fiesta
 
 .. toctree::
   :maxdepth: 2
@@ -18,6 +18,8 @@
   :name: _optional_labs
   :hidden:
 
+  flow_secure_fiesta/flow_secure_fiesta
+  flow_isolate_fiesta/flow_isolate_fiesta
   cloning_with_clam/cloning_with_calm
 
 .. toctree::
