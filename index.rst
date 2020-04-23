@@ -9,8 +9,16 @@
    gettingstarted/gettingstarted
    deploy_mssql/deploy_mssql
    admin_mssqldb/admin_mssqldb
-   deploy_mssql_era/deploy_mssql_era
-   aag/aag
+
+.. toctree::
+  :maxdepth: 2
+  :caption: Creating an App with Era
+  :name: _apps_with_era
+  :hidden:
+
+  deploy_mssql_era/deploy_mssql_era
+  aag/aag
+  cloning_with_clam/cloning_with_calm
 
 .. toctree::
   :maxdepth: 2
@@ -20,7 +28,6 @@
 
   flow_secure_fiesta/flow_secure_fiesta
   flow_isolate_fiesta/flow_isolate_fiesta
-  cloning_with_clam/cloning_with_calm
   era_rest_api/era_rest_api
 
 .. toctree::

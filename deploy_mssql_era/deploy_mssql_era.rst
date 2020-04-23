@@ -27,12 +27,12 @@ You've completed all the one time operations required to be able to provision an
    - **Description** - (Optional)
    - **Software Profile** - *Initials*\ _MSSQL_2016
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
-   - **Network Profile** - Primary_MSSQL_NETWORK
-   - **Database Time Zone** - Eastern Standard Time
+   - **Network Profile** - *Initials*\ -Primary_MSSQL_NETWORK
+   - **Database Time Zone** - America/Los_Angeles
    - Select **Join Domain**
    - **Windows Domain Profile** - NTNXLAB
    - **Windows License Key** - (Leave Blank)
-   - **Administrator Password** - nutanix/4u
+   - **Administrator Password** - Nutanix/4u
    - **Instance Name** - MSSQLSERVER
    - **Server Collation** - Default
    - **Database Parameter Profile** - DEFAULT_SQLSERVER_INSTANCE_PARAMS
@@ -124,7 +124,7 @@ Exploring the Provisioned DB Server
 #. In Prism, note the IP address of your *Initials*\ **-MSSQL2** VM and connect to it via RDP using the following credentials:
 
    - **User Name** - NTNXLAB\\Administrator
-   - **Password** - nutanix/4u
+   - **Password** - Nutanix/4u
 
 #. Open **Start > Run > diskmgmt.msc** to view the in-guest disk layout. Right-click an unlabeled volume and select **Change Drive Letter and Paths** to view the path to which Era has mounted the volume. Note there are dedicated drives corresponding to SQL data and log locations, similar to the original SQL Server to which you manually applied best practices.
 
@@ -231,7 +231,7 @@ Manipulating data using **SQL Server Management Studio** is boring. In this sect
 #. Click **Launch** and fill out the following fields:
 
    - **Name of the Application** - *Initials*\ -Fiesta
-   - **db_password** - nutanix/4u
+   - **db_password** - Nutanix/4u
    - **db_name** - *Initials*\ -fiesta (as configured when you deployed through Era)
    - **db_dialect** - mssql
    - **db_domain_name** - ntnxlab.local

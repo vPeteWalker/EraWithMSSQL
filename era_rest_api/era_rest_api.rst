@@ -1,7 +1,7 @@
-.. _era_rest_api:
+.. _rest_api:
 
 ----------------------
-Era: REST API Explorer
+Era REST API Explorer
 ----------------------
 
 Overview

@@ -1,8 +1,8 @@
 .. _deploy_mssql:
 
--------------------------
-Deploying MS SQL with Era
--------------------------
+----------------
+Deploying MS SQL
+----------------
 
 Traditional database VM deployment over resembles the diagram below. The process generally starts with a IT ticket for a database (from Dev, Test, QA, Analytics, etc.). Next one or more teams will need to deploy the storage resources and VM(s) required. Once infrastructure is ready, a DBA needs to provision and configure database software. Once provisioned, any best practices and data protection/backup policies need to be applied. Finally the database can be handed over to the end user. That's a lot of handoffs, and the potential for a lot of friction.
 
@@ -103,7 +103,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 #. Fill out the following fields and click **Create**:
 
    - **Engine** - Microsoft SQL Server
-   - **Name** - Primary-MSSQL-NETWORK
+   - **Name** - *Initials*\ -Primary-MSSQL-NETWORK
    - **Public Service VLAN** - Secondary
 
    .. figure:: images/9.png
