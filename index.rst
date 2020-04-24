@@ -18,7 +18,7 @@
 
   deploy_mssql_era/deploy_mssql_era
   aag/aag
-  cloning_with_clam/cloning_with_calm
+  cloning_with_calm/cloning_with_calm
 
 .. toctree::
   :maxdepth: 2

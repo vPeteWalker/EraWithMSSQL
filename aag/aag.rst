@@ -13,7 +13,7 @@ SQL Server AAG clusters have many moving parts, and deploying a single cluster c
 Creating an Era Managed Network
 +++++++++++++++++++++++++++++++
 
-#. In **Era > Administration > Era Resources**, click **Add** to create a new Era network.
+#. In **Era > Administration > Era Resources**, Review the configured Networks. If the **EraManaged** Network does not show under **VLANs Available for Network Profiles**, click **Add**.
 
    .. figure:: images/3.png
 
@@ -74,7 +74,7 @@ Provisioning an AAG
    - **Windows Cluster** - Create New Cluster
    - **Windows Cluster Name** - *Initials*\ -clusterdb
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
-   - **Network Profile** - ERAMANAGED__MSSQL_NETWORK
+   - **Network Profile** - ERAMANAGED_MSSQL_NETWORK
    - **Windows Domain Profile** - NTNXLAB
    - **Administrator Password** - nutanix/4u
    - **Instance Name** - MSSQLSERVER
