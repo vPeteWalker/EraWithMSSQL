@@ -103,7 +103,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 #. Fill out the following fields and click **Create**:
 
    - **Engine** - Microsoft SQL Server
-   - **Name** - *Initials*\ -Primary-MSSQL-NETWORK
+   - **Name** - Primary-MSSQL-NETWORK
    - **Public Service VLAN** - Secondary
 
    .. figure:: images/9.png

@@ -100,7 +100,7 @@ Clone Your Database Server & Database
    - **Database Server** - Create New Server
    - **Database Server Name** - *Initials*\ -MSSQL_Clone1
    - **Compute Profile** - DEFAULT_OOB_COMPUTE
-   - **Network Profile** - *Initials*\ -Primary-MSSQL-Network
+   - **Network Profile** - Primary-MSSQL-Network
    - **Administrator Password** - Nutanix/4u
 
    .. figure:: images/11.png
