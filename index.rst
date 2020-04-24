@@ -6,7 +6,7 @@
    :name: _dbs
    :hidden:
 
-   gettingstarted/gettingstarted
+   labsetup/labsetup
    deploy_mssql/deploy_mssql
    admin_mssqldb/admin_mssqldb
 

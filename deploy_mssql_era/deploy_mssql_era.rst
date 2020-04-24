@@ -28,7 +28,7 @@ You've completed all the one time operations required to be able to provision an
    - **Software Profile** - *Initials*\ _MSSQL_2016
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
    - **Network Profile** - *Initials*\ -Primary_MSSQL_NETWORK
-   - **Database Time Zone** - America/Los_Angeles
+   - **Database Time Zone** - Pacific Standard time
    - Select **Join Domain**
    - **Windows Domain Profile** - NTNXLAB
    - **Windows License Key** - (Leave Blank)
@@ -41,7 +41,7 @@ You've completed all the one time operations required to be able to provision an
    - **SQL Server Authentication Mode** - Windows Authentication
    - **Domain User Account** - (Leave Blank)
 
-   .. figure:: images/19.png
+   .. figure:: images/19a.png
 
    .. note::
 
@@ -124,7 +124,7 @@ Exploring the Provisioned DB Server
 #. In Prism, note the IP address of your *Initials*\ **-MSSQL2** VM and connect to it via RDP using the following credentials:
 
    - **User Name** - NTNXLAB\\Administrator
-   - **Password** - Nutanix/4u
+   - **Password** - nutanix/4u
 
 #. Open **Start > Run > diskmgmt.msc** to view the in-guest disk layout. Right-click an unlabeled volume and select **Change Drive Letter and Paths** to view the path to which Era has mounted the volume. Note there are dedicated drives corresponding to SQL data and log locations, similar to the original SQL Server to which you manually applied best practices.
 
@@ -186,9 +186,9 @@ Manipulating data using **SQL Server Management Studio** is boring. In this sect
 
    .. figure:: images/31.png
 
-#. In order to launch the Blueprint you must first assign a network to the VM. Select the **NodeReact** Service, and in the **VM** Configuration menu on the right, select **Primary** as the **NIC 1** network.
+#. In order to launch the Blueprint you must first assign a network to the VM. Select the **NodeReact** Service, and in the **VM** Configuration menu on the right, select **Secondary** as the **NIC 1** network.
 
-   .. figure:: images/32.png
+   .. figure:: images/32a.png
 
 #. Click **Credentials** to define a private key used to authenticate to the CentOS VM that will be provisioned by the Blueprint.
 
@@ -231,7 +231,7 @@ Manipulating data using **SQL Server Management Studio** is boring. In this sect
 #. Click **Launch** and fill out the following fields:
 
    - **Name of the Application** - *Initials*\ -Fiesta
-   - **db_password** - Nutanix/4u
+   - **db_password** - nutanix/4u
    - **db_name** - *Initials*\ -fiesta (as configured when you deployed through Era)
    - **db_dialect** - mssql
    - **db_domain_name** - ntnxlab.local

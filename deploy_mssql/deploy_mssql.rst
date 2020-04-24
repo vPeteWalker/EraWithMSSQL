@@ -29,7 +29,7 @@ Clone Source MSSQL VM
    - **Number of Cores per vCPU** - 1
    - **Memory** - 4 GiB
 
-   .. figure:: image/clone_mssql_source.png
+   .. figure:: images/clone_mssql_source.png
 
 #. Click **Save** to create the VM.
 
