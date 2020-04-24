@@ -27,7 +27,7 @@ You've completed all the one time operations required to be able to provision an
    - **Description** - (Optional)
    - **Software Profile** - *Initials*\ _MSSQL_2016
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
-   - **Network Profile** - *Initials*\ -Primary_MSSQL_NETWORK
+   - **Network Profile** - Primary_MSSQL_NETWORK
    - **Database Time Zone** - Pacific Standard time
    - Select **Join Domain**
    - **Windows Domain Profile** - NTNXLAB
