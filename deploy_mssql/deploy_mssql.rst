@@ -96,7 +96,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 
    Profiles pre-define resources and configurations, making it simple to consistently provision environments and reduce configuration sprawl. For example, Compute Profiles specifiy the size of the database server, including details such as vCPUs, cores per vCPU, and memory.
 
-#. Under **Network**, click **+ Create**.
+#. If you do not see any networks defined under **Network**, click **+ Create**.
 
    .. figure:: images/8.png
 
