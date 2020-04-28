@@ -59,7 +59,7 @@ Write New Table Into Database
 
    .. code-block:: Bash
 
-      select * into dbo.testtable from sales.orders;
+      select * into dbo.testlabtable from sales.orders;
 
    .. figure:: images/6.png
 
@@ -127,7 +127,7 @@ Delete Table
 
 #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
 
-#. Expand **SampleDB_Clone1 > Tables**, Right-Click on **dbo.testtable** and Select **Delete** and **OK**.
+#. Expand **SampleDB_Clone1 > Tables**, Right-Click on **dbo.testlabtable** and Select **Delete** and **OK**.
 
 Clone Refresh
 .............
@@ -149,4 +149,4 @@ Verify Table is Back
 
 #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
 
-#. Expand **SampleDB_Clone1 > Tables**, verify **dbo.testtable** is there.
+#. Expand **SampleDB_Clone1 > Tables**, verify **dbo.testlabtable** is there.
