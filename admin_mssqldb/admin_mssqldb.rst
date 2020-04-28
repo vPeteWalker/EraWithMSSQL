@@ -123,7 +123,7 @@ There are times when a table or other data gets deleted (by accident), and you w
 Delete Table
 ............
 
-#. #. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
+#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
 
 #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
 
@@ -145,7 +145,7 @@ Clone Refresh
 Verify Table is Back
 ....................
 
-#. #. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
+#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
 
 #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
 

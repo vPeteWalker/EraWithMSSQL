@@ -4,7 +4,7 @@
 Deploying MS SQL
 ----------------
 
-Traditional database VM deployment over resembles the diagram below. The process generally starts with a IT ticket for a database (from Dev, Test, QA, Analytics, etc.). Next one or more teams will need to deploy the storage resources and VM(s) required. Once infrastructure is ready, a DBA needs to provision and configure database software. Once provisioned, any best practices and data protection/backup policies need to be applied. Finally the database can be handed over to the end user. That's a lot of handoffs, and the potential for a lot of friction.
+Traditional database VM deployment resembles the diagram below. The process generally starts with a IT ticket for a database (from Dev, Test, QA, Analytics, etc.). Next one or more teams will need to deploy the storage resources and VM(s) required. Once infrastructure is ready, a DBA needs to provision and configure database software. Once provisioned, any best practices and data protection/backup policies need to be applied. Finally the database can be handed over to the end user. That's a lot of handoffs, and the potential for a lot of friction.
 
 .. figure:: images/0.png
 
@@ -34,12 +34,6 @@ Clone Source MSSQL VM
 #. Click **Save** to create the VM.
 
 #. Select your VM and click **Actions > Power On**.
-
-#. Once powered on, click **Actions > Launch Console** and complete Windows Server setup:
-
-   - Click **Next**
-   - **Accept** the licensing agreement
-   - Enter **nutanix/4u** as the Administrator password and click **Finish**
 
 #. Log in to the VM (**Cancel** Shutdown Event Tracker):
 
@@ -90,7 +84,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 
    .. figure:: images/7a.png
 
-   Era has five built-in SLAs (Gold, Silver, Bronze, Zero, and Brass). SLAs control however of the database server is backed up. This can with a combination of Continuous Protection, Daily, Weekly Monthly and Quarterly protection intervals.
+   Era has five built-in SLAs (Gold, Silver, Bronze, Zero, and Brass). SLAs control how the database server is backed up. This can be with a combination of Continuous Protection, Daily, Weekly Monthly and Quarterly protection intervals.
 
 #. From the dropdown menu, select **Profiles**.
 
