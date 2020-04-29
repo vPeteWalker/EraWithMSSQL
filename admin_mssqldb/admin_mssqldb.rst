@@ -59,7 +59,7 @@ Write New Table Into Database
 
    .. code-block:: Bash
 
-      select * into dbo.testtable from sales.orders;
+      select * into dbo.testlabtable from sales.orders;
 
    .. figure:: images/6.png
 
@@ -74,7 +74,7 @@ Take Manual Snapshot of Database
 
    .. figure:: images/7.png
 
-#. Click **Actions > Snapshot**.
+#. Once that is complete, click **Actions > Snapshot**.
 
    .. Figure:: images/8.png
 
@@ -123,11 +123,11 @@ There are times when a table or other data gets deleted (by accident), and you w
 Delete Table
 ............
 
-#. #. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
+#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
 
 #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
 
-#. Expand **SampleDB_Clone1 > Tables**, Right-Click on **dbo.testtable** and Select **Delete** and **OK**.
+#. Expand **SampleDB_Clone1 > Tables**, Right-Click on **dbo.testlabtable** and Select **Delete** and **OK**.
 
 Clone Refresh
 .............
@@ -138,6 +138,7 @@ Clone Refresh
 
    - **Snapshot** - *Initials*\ -MSSQL-1st-Snapshot (Date Time)
 
+
 #. Click **Refresh**
 
 #. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 2-5 minutes.
@@ -145,8 +146,8 @@ Clone Refresh
 Verify Table is Back
 ....................
 
-#. #. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
+#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
 
 #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
 
-#. Expand **SampleDB_Clone1 > Tables**, verify **dbo.testtable** is there.
+#. Expand **SampleDB_Clone1 > Tables**, verify **dbo.testlabtable** is there.

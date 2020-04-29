@@ -113,7 +113,7 @@ You've completed all the one time operations required to be able to provision an
 Exploring the Provisioned DB Server
 ++++++++++++++++++++++++++++++++++++
 
-#. In **Prism Element > Storage > Volume Groups**, locate the **ERA_**\ *Initials*\ **_MSSQL2_\*** VG and observe the layout on the **Virtual Disk** tab. <What does this tell us?>
+#. In **Prism Element > Storage > Table > Volume Groups**, locate the **ERA_**\ *Initials*\ **_MSSQL2_\** VG and observe the layout on the **Virtual Disk** tab. <What does this tell us?>
 
    .. figure:: images/23.png
 
@@ -137,7 +137,7 @@ In this exercise you will import data directly into your database from a backup 
 
 Another approach could involve adding your new Era database to an existing database cluster (AlwaysOn Availability Group) and having it replicate to your Era provisioned database. Application level synchronous or asynchronous replication (such as SQL Server AAG or Oracle RAC) can be used to provide Era benefits like cloning and Time Machine to databases whose production instances run on bare metal or non-Nutanix infrastructure.
 
-#. From your *Initials*\ **-MSSQL2** RDP session, launch **Microsoft SQL Server Management Studio** from the desktop and click **Connect** to authenticate as the currently logged in user.
+#. From your *Initials*\ **-MSSQL2** RDP session, launch **Microsoft SQL Server Management Studio** and click **Connect** to authenticate as the currently logged in user.
 
    .. figure:: images/26.png
 
@@ -182,7 +182,7 @@ Manipulating data using **SQL Server Management Studio** is boring. In this sect
 
 #. Update the **Blueprint Name** to include your initials. Even across different projects, Calm Blueprint names must be unique.
 
-#. Select *BootcampInfra** as the Calm project and click **Upload**.
+#. Select *Initials*\ -Project as the Calm project and click **Upload**.
 
    .. figure:: images/31.png
 
