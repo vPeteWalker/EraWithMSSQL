@@ -185,7 +185,7 @@ You will now apply the previously created categories to the VMs provisioned from
 
 #. Type **AppType:**\ *Initials*-**Fiesta** in the search bar and click the :fa:`plus-circle` icon to add a second category.
 
-#. Enter **AppType:**\ *Initials*-**DB** and select **Save** to apply the categories to the VM.
+#. Enter **AppTier:**\ *Initials*-**DB** and select **Save** to apply the categories to the VM.
 
    .. figure:: images/16a.png
 
@@ -215,7 +215,7 @@ Testing the Application
 
 #. From the *Initials*\ **-WinToolsVM** console open a browser and access \http://*node-VM-IP*/.
 
-#. Verify that the application loads and that tasks can be added and deleted.
+#. Verify that the application loads and that Products can be added and deleted.
 
    .. figure:: images/30.png
 

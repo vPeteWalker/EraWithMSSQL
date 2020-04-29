@@ -74,7 +74,7 @@ Take Manual Snapshot of Database
 
    .. figure:: images/7.png
 
-#. Click **Actions > Snapshot**.
+#. Once that is complete, click **Actions > Snapshot**.
 
    .. Figure:: images/8.png
 
@@ -137,6 +137,7 @@ Clone Refresh
 #. Select the Clone for your Database *Initials*\ -LABSQLDB_Clone1 and Click **Refresh**.
 
    - **Snapshot** - *Initials*\ -MSSQL-1st-Snapshot (Date Time)
+
 
 #. Click **Refresh**
 

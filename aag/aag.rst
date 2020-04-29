@@ -72,7 +72,7 @@ Provisioning an AAG
 #. Fill out the following fields and click **Next**:
 
    - **Windows Cluster** - Create New Cluster
-   - **Windows Cluster Name** - *Initials*\ -clusterdb
+   - **Windows Cluster Name** - *Initials*\ -clusterdb (Cluster Name has a 15 Character limit)
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
    - **Network Profile** - ERAMANAGED_MSSQL_NETWORK
    - **Windows Domain Profile** - NTNXLAB
@@ -110,7 +110,7 @@ Provisioning an AAG
 
    .. figure:: images/9.png
 
-#. Monitor the refresh on the **Operations** page. This operation should take approximately 35 minutes. **You can proceed to the while your clustered database servers are provisioned.**
+#. Monitor the refresh on the **Operations** page. This operation should take approximately 35 minutes. **You can proceed to the next section while your clustered database servers are provisioned.**
 
    .. figure:: images/10.png
 
@@ -150,7 +150,7 @@ Time to break stuff!
 
 #. In **Prism Central > VMs**, power off *Initials*\ **-clusterdb-1** VM.
 
-   .. note:: You can double check which VM is currently the primary member of the AAG but noting which VM currently displays the AAG's Listener IP Address and Windows Cluster IP in Prism Central.
+   .. note:: You can double check which VM is currently the primary member of the AAG by noting which VM currently displays the AAG's Listener IP Address and Windows Cluster IP in Prism Central.
 
    .. figure:: images/16.png
 
