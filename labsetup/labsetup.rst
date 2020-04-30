@@ -33,7 +33,6 @@ Maintaining the status quo leads to inefficient usage of both storage and worse,
 
 Nutanix Era provides DBaaS for your Enterprise Cloud. Leveraging the Nutanix Enterprise Cloud OS, we are able to take advantage of the power of full stack - data, compute, and software. Nutanix Era hides the complexity of database operations and provides common APIs, CLI, and consumer-grade GUI experience for multiple database engines. It makes database operations such as cloning efficient, thereby driving down the TCO of database management for our customers.
 
-In this track you'll walk in an administrator's shoes to manually deploy a Microsoft SQL database VM on AHV, and observe first hand how Day 1 and Day 2+ management of that workload can be transformed with Nutanix Era. In addition to Era, you'll see how additional products like Flow and Prism Pro complement database workloads on Nutanix.
 
 Configuring a Project
 +++++++++++++++++++++
