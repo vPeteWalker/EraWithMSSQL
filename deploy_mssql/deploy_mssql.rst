@@ -183,5 +183,3 @@ Before additional SQL Server VMs can be provisioned, a Software Profile must fir
    .. note::
 
        If creating a profile from a not-cleanly shutdown server it may be corrupt or may not provision successfully. Please ensure that the DBServer had a clean shutdown and clean startup before registering profile to Era.
-
-#. Once the profile creation completes successfully, Shutdown (Gracefully) your *Initials*\ **-MSSQL** VM in Prism.
