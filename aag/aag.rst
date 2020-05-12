@@ -76,14 +76,14 @@ Provisioning an AAG
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
    - **Network Profile** - ERAMANAGED_MSSQL_NETWORK
    - **Windows Domain Profile** - NTNXLAB
-   - **Administrator Password** - nutanix/4u
+   - **Administrator Password** - Nutanix/4u
    - **Instance Name** - MSSQLSERVER
    - **SQL Service Startup Account** - ntnxlab.local\\Administrator
    - **SQL Service Startup Account Password** - nutanix/4u
    - **SQL Server Authentication Mode** - Windows Authentication
    - **Domain User Account** - ntnxlab.local\\Administrator
 
-   .. figure:: images/7.png
+   .. figure:: images/7a.png
 
 #. Modify the following default **Topology** fields and click **Next**:
 
