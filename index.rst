@@ -236,69 +236,101 @@ Credentials
   The *<Cluster Password>* is unique to each cluster and will be provided by the leader of the Workshop.
 
 .. list-table::
-  :widths: 25 35 40
-  :header-rows: 1
+   :widths: 25 35 40
+   :header-rows: 1
 
-  * - Credential
-    - Username
-    - Password
-  * - Prism Element
-    - admin
-    - *<Cluster Password>*
-  * - Prism Central
-    - admin
-    - *<Cluster Password>*
-  * - Controller VM
-    - nutanix
-    - *<Cluster Password>*
-  * - Prism Central VM
-    - nutanix
-    - *<Cluster Password>*
+   * - Credential
+     - Username
+     - Password
+   * - Prism Element
+     - admin
+     - *<Cluster Password>*
+   * - Prism Central
+     - admin
+     - *<Cluster Password>*
+   * - Controller VM
+     - nutanix
+     - *<Cluster Password>*
+   * - Prism Central VM
+     - nutanix
+     - *<Cluster Password>*
 
 Each cluster has a dedicated domain controller VM, **DC**, responsible for providing AD services for the **NTNXLAB.local** domain. The domain is populated with the following Users and Groups:
 
 .. list-table::
-  :widths: 25 35 40
-  :header-rows: 1
+   :widths: 25 35 40
+   :header-rows: 1
 
-  * - Group
-    - Username(s)
-    - Password
-  * - Administrators
-    - Administrator
-    - nutanix/4u
-  * - SSP Admins
-    - adminuser01 - adminuser25
-    - nutanix/4u
-  * - SSP Developers
-    - devuser01 - devuser25
-    - nutanix/4u
-  * - SSP Power Users
-    - poweruser01 - poweruser25
-    - nutanix/4u
-  * - SSP Basic Users
-    - basicuser01 - basicuser25
-    - nutanix/4u
+   * - Group
+     - Username(s)
+     - Password
+   * - Administrators
+     - Administrator
+     - nutanix/4u
+   * - SSP Admins
+     - adminuser01-adminuser25
+     - nutanix/4u
+   * - SSP Developers
+     - devuser01-devuser25
+     - nutanix/4u
+   * - SSP Consumers
+     - consumer01-consumer25
+     - nutanix/4u
+   * - SSP Operators
+     - operator01-operator25
+     - nutanix/4u
+   * - SSP Custom
+     - custom01-custom25
+     - nutanix/4u
+   * - Bootcamp Users
+     - user01-user25
+     - nutanix/4u
 
 Access Instructions
 +++++++++++++++++++
 
 The Nutanix Hosted POC environment can be accessed a number of different ways:
 
+Lab Access User Credentials
+...........................
+
+PHX Based Clusters:
+**Username:** PHX-POCxxx-User01 (up to PHX-POCxxx-User20), **Password:** *<Provided by Instructor>*
+
+RTP Based Clusters:
+**Username:** RTP-POCxxx-User01 (up to RTP-POCxxx-User20), **Password:** *<Provided by Instructor>*
+
+Frame VDI
+.........
+
+Login to: https://console.nutanix.com/x/labs
+
+**Nutanix Employees** - Use your **NUTANIXDC** credentials
+**Non-Employees** - Use **Lab Access User** Credentials
+
 Parallels VDI
 .................
 
-Login to: https://xld-uswest1.nutanix.com (for PHX) or https://xld-useast1.nutanix.com (for RTP)
+PHX Based Clusters Login to: https://xld-uswest1.nutanix.com
 
-**Nutanix Employees** - Use your NUTANIXDC credentials
-**Non-Employees** - **Username:** POCxxx-User01 (up to POCxxx-User20), **Password:** *<Provided by Instructor>*
+RTP Based Clusters Login to: https://xld-useast1.nutanix.com
 
-Pulse Secure VPN
+**Nutanix Employees** - Use your **NUTANIXDC** credentials
+**Non-Employees** - Use **Lab Access User** Credentials
+
+Employee Pulse Secure VPN
 ..........................
 
-To download the client: login to https://xlv-uswest1.nutanix.com or https://xlv-useast1.nutanix.com - **Username:** POCxxx-User01 (up to POCxxx-User20), **Password:** *<Provided by Instructor>*
+Download the client:
 
-Download and install the client.
+PHX Based Clusters Login to: https://xld-uswest1.nutanix.com
+
+RTP Based Clusters Login to: https://xld-useast1.nutanix.com
+
+**Nutanix Employees** - Use your **NUTANIXDC** credentials
+**Non-Employees** - Use **Lab Access User** Credentials
+
+Install the client.
 
 In Pulse Secure Client, **Add** a connection:
 
@@ -320,4 +352,4 @@ Nutanix Version Info
 
 - **AHV Version** - AHV 20170830.337 (AOS 5.11+)
 - **AOS Version** - 5.15.x | 5.16.x | 5.17.x | 5.18.x
-- **PC Version** - Prism 2020.8
+- **PC Version** - Prism 2020.9

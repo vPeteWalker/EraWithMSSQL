@@ -10,10 +10,10 @@ Traditional database VM deployment resembles the diagram below. The process gene
 
 Whereas with a Nutanix cluster and Era, provisioning and protecting a database should take you no longer than it took to read this intro.
 
-Clone Source MSSQL VM
+Source MSSQL VM
 +++++++++++++++++++++
 
-#. Log in to your  *UserXX-MSSQLSourceVM* (**Cancel** Shutdown Event Tracker):
+#. Log in to your  *UserXX*\ **-MSSQLSourceVM** (**Cancel** Shutdown Event Tracker):
 
    - **Username** - Administrator
    - **Password** - Nutanix/4u
@@ -144,7 +144,7 @@ You must meet the following requirements before you register a SQL Server databa
 #. Click **+ Register** and fill out the following fields:
 
    - **Engine** - Microsoft SQL Server
-   - **IP Address or Name of VM** - *UserXX-MSSQLSourceVM*
+   - **IP Address or Name of VM** - *UserXX*\ **-MSSQLSourceVM**
    - **Windows Administrator Name** - Administrator
    - **Windows Administrator Password** - Nutanix/4u
    - **Instance** - MSSQLSERVER (This should auto-populate after providing credentials)
@@ -153,7 +153,7 @@ You must meet the following requirements before you register a SQL Server databa
 
    .. note::
 
-      If **Instance** does not automatically populate, disable the Windows Firewall in your *UserXX-MSSQLSourceVM* VM.
+      If **Instance** does not automatically populate, disable the Windows Firewall in your *UserXX*\ **-MSSQLSourceVM** VM.
 
    .. figure:: images/12.png
 
