@@ -79,7 +79,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 #. Login using the following credentials:
 
    - **Username** - admin
-   - **Password** - nutanix/4u
+   - **Password** - *<Cluster Password>*
 
 #. From the **Dashboard** dropdown, select **Administration**.
 
