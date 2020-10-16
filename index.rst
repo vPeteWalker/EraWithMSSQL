@@ -17,7 +17,7 @@
   :hidden:
 
   deploy_mssql_era/deploy_mssql_era
-  aag/aag
+..  aag/aag
   cloning_with_calm/cloning_with_calm
 
 .. toctree::
@@ -26,9 +26,10 @@
   :name: _optional_labs
   :hidden:
 
-  flow_secure_fiesta/flow_secure_fiesta
-  flow_isolate_fiesta/flow_isolate_fiesta
   era_rest_api/era_rest_api
+..  flow_secure_fiesta/flow_secure_fiesta
+  flow_isolate_fiesta/flow_isolate_fiesta
+
 
 .. toctree::
   :maxdepth: 2
@@ -54,7 +55,8 @@ What's New
 
 - Workshop updated for the following software versions:
     - AOS 5.15.x | 5.16.x | 5.17.x | 5.18.x
-    - Prism 2020.8
+    - Prism 2020.9
+    - Era 3.0.0
 
 - Optional Lab Updates:
 
