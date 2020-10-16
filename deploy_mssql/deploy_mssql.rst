@@ -10,41 +10,58 @@ Traditional database VM deployment resembles the diagram below. The process gene
 
 Whereas with a Nutanix cluster and Era, provisioning and protecting a database should take you no longer than it took to read this intro.
 
-**In this lab you will deploy a Microsoft SQL Server VM, by cloning a source MSSQL VM. This VM will act as a master image to create a profile for deploying additional SQL VMs using Era.**
-
-Clone Source MSSQL VM
+Source MSSQL VM
 +++++++++++++++++++++
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
-
-   .. figure:: images/1.png
-
-#. Select the checkbox for **Win2016SQLSource**, and click **Actions > Clone**.
-
-#. Fill out the following fields:
-
-   - **Number Of Clones** - 1
-   - **Name** - *Initials*-MSSQL
-   - **vCPU(s)** - 2
-   - **Number of Cores per vCPU** - 1
-   - **Memory** - 4 GiB
-
-   .. figure:: images/clone_mssql_source.png
-
-#. Click **Save** to create the VM.
-
-#. Select your VM and click **Actions > Power On**.
-
-#. Log in to the VM (**Cancel** Shutdown Event Tracker):
+#. Log in to your  *UserXX*\ **-MSSQLSourceVM** (**Cancel** Shutdown Event Tracker):
 
    - **Username** - Administrator
    - **Password** - Nutanix/4u
 
+
+  .. note::  This is assigned by the SE leading the Bootcamp
+
 #. Disable Windows Firewall for all.
 
-#. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
+#. Open SQL Server Management Studio (SSMS), and **Connect** using Windows Authentication.
 
 #. Verify you can browse the **SampleDB**.
+
+..  Clone Source MSSQL VM
+  +++++++++++++++++++++
+
+  **In this lab you will deploy a Microsoft SQL Server VM, by cloning a source MSSQL VM. This VM will act as a master image to create a profile for deploying additional SQL VMs using Era.**
+
+  #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
+
+     .. figure:: images/1.png
+
+  #. Select the checkbox for **Win2016SQLSource**, and click **Actions > Clone**.
+
+  #. Fill out the following fields:
+
+     - **Number Of Clones** - 1
+     - **Name** - *Initials*-MSSQL
+     - **vCPU(s)** - 2
+     - **Number of Cores per vCPU** - 1
+     - **Memory** - 4 GiB
+
+     .. figure:: images/clone_mssql_source.png
+
+  #. Click **Save** to create the VM.
+
+  #. Select your VM and click **Actions > Power On**.
+
+  #. Log in to the VM (**Cancel** Shutdown Event Tracker):
+
+     - **Username** - Administrator
+     - **Password** - Nutanix/4u
+
+  #. Disable Windows Firewall for all.
+
+  #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
+
+  #. Verify you can browse the **SampleDB**.
 
 Exploring Era Resources
 +++++++++++++++++++++++
@@ -62,7 +79,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 #. Login using the following credentials:
 
    - **Username** - admin
-   - **Password** - nutanix/4u
+   - **Password** - *<Cluster Password>*
 
 #. From the **Dashboard** dropdown, select **Administration**.
 
@@ -72,7 +89,7 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 
 #. Select **Era Resources** from the left-hand menu.
 
-#. Review the configured Networks. If no Networks show under **VLANs Available for Network Profiles**, click **Add**. Select **Secondary** VLAN and click **Add**.
+.. #. Review the configured Networks. If no Networks show under **VLANs Available for Network Profiles**, click **Add**. Select **Secondary** VLAN and click **Add**.
 
    .. note::
 
@@ -90,11 +107,11 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 
    Profiles pre-define resources and configurations, making it simple to consistently provision environments and reduce configuration sprawl. For example, Compute Profiles specifiy the size of the database server, including details such as vCPUs, cores per vCPU, and memory.
 
-#. If you do not see any networks defined under **Network**, click **+ Create**.
+.. #. If you do not see any networks defined under **Network**, click **+ Create**.
 
    .. figure:: images/8.png
 
-#. Fill out the following fields and click **Create**:
+.. #. Fill out the following fields and click **Create**:
 
    - **Engine** - Microsoft SQL Server
    - **Name** - Primary-MSSQL-NETWORK
@@ -127,7 +144,7 @@ You must meet the following requirements before you register a SQL Server databa
 #. Click **+ Register** and fill out the following fields:
 
    - **Engine** - Microsoft SQL Server
-   - **IP Address or Name of VM** - *Initials*\ -MSSQL
+   - **IP Address or Name of VM** - *UserXX*\ **-MSSQLSourceVM**
    - **Windows Administrator Name** - Administrator
    - **Windows Administrator Password** - Nutanix/4u
    - **Instance** - MSSQLSERVER (This should auto-populate after providing credentials)
@@ -136,7 +153,7 @@ You must meet the following requirements before you register a SQL Server databa
 
    .. note::
 
-      If **Instance** does not automatically populate, disable the Windows Firewall in your *XYZ*\ **-MSSQL** VM.
+      If **Instance** does not automatically populate, disable the Windows Firewall in your *UserXX*\ **-MSSQLSourceVM** VM.
 
    .. figure:: images/12.png
 
