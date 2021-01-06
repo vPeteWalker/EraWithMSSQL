@@ -17,6 +17,7 @@
   :hidden:
 
   deploy_mssql_era/deploy_mssql_era
+  patch_sql/patch_sql
 ..  aag/aag
   cloning_with_calm/cloning_with_calm
 
@@ -26,6 +27,7 @@
   :name: _optional_labs
   :hidden:
 
+  prismops_appmonitoring_lab/prismops_appmonitoring_lab
   era_rest_api/era_rest_api
 ..  flow_secure_fiesta/flow_secure_fiesta
   flow_isolate_fiesta/flow_isolate_fiesta
@@ -55,9 +57,9 @@ What's New
 ++++++++++
 
 - Workshop updated for the following software versions:
-    - AOS 5.15.x | 5.16.x | 5.17.x | 5.18.x
+    - AOS 5.17.x | 5.18.x | 5.19.x
     - Prism 2020.9
-    - Era 3.0.0
+    - Era 2.1.0
 
 - Optional Lab Updates:
 
@@ -74,6 +76,8 @@ Agenda
 
 Optional labs:
 
+- Monitoring Applications with Prism Operations
+- Era API
 
 Introductions
 +++++++++++++
