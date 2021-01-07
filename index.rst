@@ -76,7 +76,7 @@ Agenda
 
 Optional labs:
 
-- Monitoring Applications with Prism Operations
+- Monitoring Applications with Prism Ultimate
 - Era API
 
 Introductions
