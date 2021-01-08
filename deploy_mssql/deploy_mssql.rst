@@ -72,7 +72,9 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
 
    If you're interested, instructions for the brief installation of the Era appliance can be found `here <https://portal.nutanix.com/#/page/docs/details?targetId=Nutanix-Era-User-Guide-v12:era-era-installing-on-ahv-t.html>`_.
 
-#. In **Prism Central > VMs > List**, identify the IP address assigned to the **EraServer-\*** VM using the **IP Addresses** column.
+#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs > List**.
+
+#. Identify the IP address assigned to the **EraServer-\*** VM using the **IP Addresses** column.
 
 #. Open \https://*ERA-VM-IP:8443*/ in a new browser tab.
 
@@ -81,27 +83,27 @@ Era is distributed as a virtual appliance that can be installed on either AHV or
    - **Username** - admin
    - **Password** - *<Cluster Password>*
 
-#. From the **Dashboard** dropdown, select **Administration**.
+#. From the dropdown menu, select **Administration**.
 
-#. Under **Cluster Details**, note that Era has already been configured for your assigned cluster.
+#. Under **Era Service**, note that Era has already been configured for your assigned cluster.
 
    .. figure:: images/6.png
 
-#. Select **Era Resources** from the left-hand menu.
-
-.. #. Review the configured Networks. If no Networks show under **VLANs Available for Network Profiles**, click **Add**. Select **Secondary** VLAN and click **Add**.
-
-   .. note::
-
-      Leave **Manage IP Address Pool** unchecked, as we will be leveraging the cluster's IPAM to manage addresses
-
-   .. figure:: images/era_networks_001.png
+   .. #. Select **Era Resources** from the left-hand menu.
+   ..
+   .. #. Review the configured Networks. If no Networks show under **VLANs Available for Network Profiles**, click **Add**. Select **Secondary** VLAN and click **Add**.
+   ..
+   ..    .. note::
+   ..
+   ..       Leave **Manage IP Address Pool** unchecked, as we will be leveraging the cluster's IPAM to manage addresses
+   ..
+   ..    .. figure:: images/era_networks_001.png
 
 #. From the dropdown menu, select **SLAs**.
 
    .. figure:: images/7a.png
 
-   Era has five built-in SLAs (Gold, Silver, Bronze, Zero, and Brass). SLAs control how the database server is backed up. This can be with a combination of Continuous Protection, Daily, Weekly Monthly and Quarterly protection intervals.
+   Era has five built-in SLAs (Gold, Silver, Bronze, Brass, and Zero). SLAs control how the database server is backed up. This can be with a combination of Continuous Protection, Daily, Weekly, Monthly, and Quarterly protection intervals.
 
 #. From the dropdown menu, select **Profiles**.
 
@@ -129,21 +131,20 @@ You must meet the following requirements before you register a SQL Server databa
 - A local user account or a domain user account with administrator privileges on the database server must be provided.
 - Windows account or the SQL login account provided must be a member of sysadmin role.
 - SQL Server instance must be running.
-- Database files must not exist in C:\ Drive.
+- Database files must not exist in boot (ex. C:\\) drive.
 - Database must be in an online state.
 - Windows remote management (WinRM) must be enabled
 
 .. note::
 
-   Your *XYZ*\ **-MSSQL** VM meets all of these criteria.
+   Your *UserXX*\ **-MSSQLSourceVM** VM meets all of these criteria.
 
-#. In **Era**, select **Database Servers** from the dropdown menu and **List** from the lefthand menu.
+#. In **Era**, select **Database Server VMs** from the dropdown menu, and then **List** from the left-hand menu.
 
    .. figure:: images/11.png
 
-#. Click **+ Register** and fill out the following fields:
+#. Click **+ Register > Microsoft SQL Server > Single Node Server VM** and fill out the following fields:
 
-   - **Engine** - Microsoft SQL Server
    - **IP Address or Name of VM** - *UserXX*\ **-MSSQLSourceVM**
    - **Windows Administrator Name** - Administrator
    - **Windows Administrator Password** - Nutanix/4u
@@ -178,25 +179,29 @@ Creating A Software Profile
 
 Before additional SQL Server VMs can be provisioned, a Software Profile must first be created from the database server VM registered in the previous step. A software profile is a template that includes the SQL Server database and operating system. This template exists as a hidden, cloned disk image on your Nutanix storage.
 
-#. Select **Profiles** from the dropdown menu and **Software** from the lefthand menu.
+#. Select **Profiles** from the dropdown menu, and then **Software** from the left-hand menu.
 
    .. figure:: images/14.png
 
-#. Click **+ Create** and fill out the following fields:
+#. Click **+ Create > Microsoft SQL Server** and fill out the following fields:
 
-   - **Engine** - Microsoft SQL Server
-   - **Name** - *Initials*\ _MSSQL_2016
+   - **Profile Name** - *Initials*\ _MSSQL_2016
    - **Description** - (Optional)
    - **Database Server** - Select your registered *Initials*\ -MSSQL VM
 
    .. figure:: images/15.png
 
+#. Click **Next** and fill out the following fields:
+
+   - **Operating System Notes** - (Optional)
+   - **Database Software Notes** - (Optional)
+
 #. Click **Create**.
 
-#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 5 minutes.
+#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 2 minutes.
 
    .. figure:: images/16.png
 
    .. note::
 
-       If creating a profile from a not-cleanly shutdown server it may be corrupt or may not provision successfully. Please ensure that the DBServer had a clean shutdown and clean startup before registering profile to Era.
+       If creating a profile from a server not gracefully shut down, it may be corrupt or may not provision successfully. Please ensure that *UserXX*\ **-MSSQLSourceVM** had a clean shutdown, and clean startup before registering profile to Era.
