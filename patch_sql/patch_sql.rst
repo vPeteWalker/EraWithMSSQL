@@ -31,17 +31,19 @@ A software profile versions are created in Era to support patching of SQL Server
 
 #. Within Era, select **Profiles** from the drop-down menu.
 
-#. On the left-hand side, select **Software**, and then click on the software profile under which you wish to create a new version (i.e. `MSSQL_2016`)
+#. On the left-hand side, select **Software**, and then click on the software profile under which you wish to create a new version (i.e. *Initials*\ _MSSQL_2016)
 
 #. Click **Create**. The *Create Software Profile Version* window appears.
 
 #. Do the following in the indicated fields:
 
-   - **Name.** SQL2016_SP1_CU15
+   - **Name** *Initials*\ _SQL2016_SP1_CU15
 
-   - **Patch File Location.** Upload ``SQLServer2016-KB4495257-x64.exe`` either from a file share (HPOC) or upload from your PC.
+   - **Patch File Location** Upload ``SQLServer2016-KB4495257-x64.exe`` either from a file share (HPOC) or upload from your PC.
 
       .. figure:: images/2.png
+
+   - Wait for the upload to complete, and then click **Create**.
 
 Updating a Software Profile Version
 +++++++++++++++++++++++++++++++++++

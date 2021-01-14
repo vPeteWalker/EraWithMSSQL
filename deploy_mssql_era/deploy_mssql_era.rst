@@ -15,33 +15,28 @@ You've completed all the one time operations required to be able to provision an
 
 #. In **Era**, select **Databases** from the dropdown menu and **Sources** from the lefthand menu.
 
-#. Click **+ Provision > Single Node Database**.
+#. Click **+ Provision > Microsoft SQL Server > Database**.
 
    .. figure:: images/18.png
 
-#. In the **Provision a Database** wizard, fill out the following fields to configure the Database Server:
+#. In the **Provision a SQL Server Database** wizard, fill out the following fields to configure the Database Server:
 
-   - **Engine** - Microsoft SQL Server
-   - **Database Server** - Create New Server
+   - **Database Server VM** - Create New Server
    - **Database Server Name** - *Initials*\ -MSSQL2
    - **Description** - (Optional)
    - **Software Profile** - *Initials*\ _MSSQL_2016
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
    - **Network Profile** - Primary_MSSQL_NETWORK
-   - **Database Time Zone** - Pacific Standard time
    - Select **Join Domain**
    - **Windows Domain Profile** - NTNXLAB
    - **Windows License Key** - (Leave Blank)
    - **Administrator Password** - Nutanix/4u
    - **Instance Name** - MSSQLSERVER
-   - **Server Collation** - Default
+   - **Server Collation** - (Leave Default)
    - **Database Parameter Profile** - DEFAULT_SQLSERVER_INSTANCE_PARAMS
-   - **SQL Service Startup Account** - ntnxlab.local\\Administrator
-   - **SQL Service Startup Account Password** - nutanix/4u
    - **SQL Server Authentication Mode** - Windows Authentication
-   - **Domain User Account** - (Leave Blank)
 
-   .. figure:: images/19a.png
+   .. figure:: images/19.png
 
    .. note::
 
@@ -176,7 +171,7 @@ Manipulating data using **SQL Server Management Studio** is boring. In this sect
 #. `Download the Fiesta Blueprint by right-clicking here <https://raw.githubusercontent.com/nutanixworkshops/EraWithMSSQL/master/deploy_mssql_era/FiestaNoDB.json>`_. This single-VM Blueprint is used to provision only the web tier portion of the application.
 
 
-#. From **Prism Central > Calm**, select **Blueprints** from the lefthand menu and click **Upload Blueprint**.
+#. From **Prism Central** > select :fa:`bars` **> Services > Calm**. Select **Blueprints** from the left-hand menu, and click **Upload Blueprint**.
 
    .. figure:: images/30.png
 
