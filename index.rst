@@ -113,8 +113,8 @@ Three/Four node HPOC clusters
 Three or four node Hosted POC clusters follow a standard naming convention:
 
 - **Cluster Name** - POC\ *XYZ*
-- **Subnet** - 10.\ **21**\ .\ *XYZ*\ .0
-- **Cluster IP** - 10.\ **21**\ .\ *XYZ*\ .37
+- **Subnet** - 10.\ **38**\ .\ *XYZ*\ .0
+- **Cluster IP** - 10.\ **38**\ .\ *XYZ*\ .37
 
 For example:
 
