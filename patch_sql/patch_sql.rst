@@ -16,14 +16,6 @@ Links
 
       .. figure:: images/1.png
 
-**Prerequisites:** Completion of :ref:`era_mssql`
-
-**(Optional) Pre-requisite:** N/A
-
-**Expected Module Duration:** 60 minutes
-
-**Covered Test IDs:** N/A
-
 Creating a Software Profile Version
 +++++++++++++++++++++++++++++++++++
 
@@ -31,7 +23,7 @@ A software profile versions are created in Era to support patching of SQL Server
 
 #. Within Era, select **Profiles** from the drop-down menu.
 
-#. On the left-hand side, select **Software**, and then click on the software profile under which you wish to create a new version (i.e. *Initials*\ _MSSQL_2016)
+#. On the left-hand side, select **Software**, and then click on the software profile under which you wish to create a new version (i.e. *Initials*\ _MSSQL_2016).
 
 #. Click **Create**. The *Create Software Profile Version* window appears.
 
@@ -52,9 +44,9 @@ After profile creation is successful, you must publish the profile to make the p
 
 #. Within Era, select **Profiles** from the drop-down menu.
 
-#. On the left-hand side, select **Software**, and then click on the software profile under which you wish to update the version (i.e. `MSSQL_2016`).
+#. On the left-hand side, select **Software**, and then click on the *Initials*\ _MSSQL_2016 software profile.
 
-#. Select the *SQL2016_SP1_CU15* profile version, and click **Update**. The *Update Software Profile Version* window appears.
+#. Select the *Initials*\ _SQL2016_SP1_CU15 profile version, and click **Update**. The *Update Software Profile Version* window appears.
 
 #. In the *General* step, click on **Published**, and then click the check box for *By publishing this version of the software profile, I understand that Era will recommend that all databases using an earlier versions of this software profile should update to this new version. The recommendation will appear on the Database Server VM home page*.
 
@@ -71,7 +63,7 @@ Perform the following procedure to apply updates from the available software pro
 
 #. Within Era, select **Database Server VMs** from the drop-down list.
 
-#. Click on **List** from the left-hand side, then click the database server VM for which you want to update the software profile version (ex. `FiestaDB_Dev`). The *Database Server VM Summary* page appears.
+#. Click on **List** from the left-hand side, then click the *UserXX*\ **-MSSQLSourceVM** database server VM for which you want to update the software profile version. The *Database Server VM Summary* page appears.
 
 #. Go to the *Software Profile Version* widget, and click **Update**. The *Update Database Server VM* window appears.
 
@@ -83,39 +75,18 @@ Perform the following procedure to apply updates from the available software pro
 
 #. Select the following in the indicated fields:
 
-   - **Update to Software Profile Version**. SQL2016_SP1_CU15
+   - **Software Profile** *Initials*\ _MSSQL_2016
+
+   - **Version** *Initials*\ _SQL2016_SP1_CU15
 
    - **Start Update** Now
 
    .. figure:: images/4.png
 
-#. Confirm the update by typing **FiestaDB_Dev** in the text box, and click **Update**.
+#. Confirm the update by typing *UserXX*\ **-MSSQLSourceVM** in the text box, and click **Update**.
 
 A message appears at the top indicating that the operation to update a database has started. Click the message to monitor the progress of the operation. Alternatively, select **Operations** in the drop-down list of the main menu to monitor the progress of the operation.
 
-Patching a SQL Server Database Server Cluster
-+++++++++++++++++++++++++++++++++++++++++++++
+#. You can demonstrate the patch process was successful, by opening MS SQL Server Management Studio, and observing the server version and comparing that version with the SQL Server 2016 build versions web page.
 
-Perform the following procedure to apply updates from the available software profile versions to a provisioned/registered database server cluster (Windows cluster). Patches are applied in a rolling upgrade.
-
-#. Within Era, select **Database Server VMs** from the drop-down list.
-
-#. Go to **List** from the left-hand side, then click the database server cluster for which you want to update the software profile version (ex. `Fiesta01`). The *Server Cluster Summary* page appears.
-
-#. Go to the *Software Profile Version* widget and click **Update**. The *Update Windows Cluster* window appears.
-
-   The *Software Profile Version* widget displays the current version, recommended version, and the status of the software profile version.
-
-   .. Note::
-
-      The `Update` option only appears when a new software profile version is available.
-
-#. Select the following in the indicated fields:
-
-   - **Update to Software Profile Version**. SQL2016_SP1_CU15
-
-   - **Start Update** Now
-
-   .. figure:: images/5.png
-
-A message appears at the top indicating that the operation to update a database has started. Click the message to monitor the progress of the operation. Alternatively, select Operations in the drop-down list of the main menu to monitor the progress of the operation.
+   .. figure:: images/4a.png
