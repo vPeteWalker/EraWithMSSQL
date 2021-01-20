@@ -85,7 +85,7 @@ Perform the following procedure to apply updates from the available software pro
 
 #. Confirm the update by typing *UserXX*\ **-MSSQLSourceVM** in the text box, and click **Update**.
 
-A message appears at the top indicating that the operation to update a database has started. Click the message to monitor the progress of the operation. Alternatively, select **Operations** in the drop-down list of the main menu to monitor the progress of the operation.
+   A message appears at the top indicating that the operation to update a database has started. Click the message to monitor the progress of the operation. Alternatively, select **Operations** in the drop-down list of the main menu to monitor the progress of the operation.
 
 #. You can demonstrate the patch process was successful, by opening MS SQL Server Management Studio, and observing the server version and comparing that version with the SQL Server 2016 build versions web page.
 
