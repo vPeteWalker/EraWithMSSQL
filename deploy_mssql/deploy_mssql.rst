@@ -18,8 +18,7 @@ Source MSSQL VM
    - **Username** - Administrator
    - **Password** - Nutanix/4u
 
-
-  .. note::  This is assigned by the SE leading the Bootcamp
+   .. note::  This is assigned by the SE leading the Bootcamp
 
 #. Disable Windows Firewall for all.
 
