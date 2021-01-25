@@ -1,7 +1,7 @@
 .. _webtier:
 
 ----------------------
-Deploying the Webtier
+(Optional) Deploying the Webtier
 ----------------------
 
 
