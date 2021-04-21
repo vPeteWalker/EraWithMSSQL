@@ -4,62 +4,60 @@
 (Optional) Deploying the Webtier
 ----------------------
 
-
-
 Configuring a Project
 +++++++++++++++++++++
 
-In this lab you will leverage multiple pre-built Calm Blueprints to provision your applications...
+In this lab you will leverage multiple pre-built Calm Blueprints to provision your applications.
 
-#. In **Prism Central**, select :fa:`bars` **> Services > Calm**.\
+#. Within *Prism Central*, select :fa:`bars` **> Services > Calm**.
 
-#. Select **Projects** from the lefthand menu and click **+ Create Project**.
+#. Select **Projects** from the left-hand menu, and then click **+ Create Project**.
 
    .. figure:: images/2.png
 
 #. Fill out the following fields:
 
+.. note:: If you are using a Single Node Cluster (SNC), only a Primary network will be available to you. In this case, ignore any references to the Secondary network, and instead use the Primary network.
+
    - **Project Name** - *Initials*\ -Project
-   - Under **Users, Groups, and Roles**, select **+ User**
-      - **Name** - Administrators
+   - Within *Users, Groups, and Roles* section, click **+user** (right side)
+      - **Name** - Administrators (group)
       - **Role** - Project Admin
       - **Action** - Save
-   - Under **Infrastructure**, select **Select Provider > Nutanix**
+   - Within *Infrastructure* section, click **Select Provider > Nutanix**
    - Click **Select Clusters & Subnets**
-   - Select *Your Assigned Cluster*
-   - Under **Subnets**, select **Primary**, **Secondary**, and click **Confirm**
+   - Select *Your Assigned Cluster* from the dropdown
+   - Within *Subnets for cluster...*, click **Primary**, and then click **Confirm**
    - Mark **Primary** as the default network by clicking the :fa:`star`
 
    .. figure:: images/3.png
 
-#. Click **Save & Configure Environment**.
+#. Proceed to the next section.
 
 Provision Fiesta Web Tier
 +++++++++++++++++++++++++
 
-Manipulating data using **SQL Server Management Studio** is boring. In this section you'll deploy the web tier of the application and connect it to your production database.
-
+In this section you'll deploy the web tier of the application and connect it to your production database.
 
 #. `Download the Fiesta Blueprint by right-clicking here <https://raw.githubusercontent.com/nutanixworkshops/EraWithMSSQL/master/webtier/FiestaNoDB.json>`_. This single-VM Blueprint is used to provision only the web tier portion of the application.
 
-
-#. From **Prism Central** > select :fa:`bars` **> Services > Calm**. Select **Blueprints** from the left-hand menu, and click **Upload Blueprint**.
+#. Within *Prism Central*, select :fa:`bars` **> Services > Calm**. Select **Blueprints** from the left-hand menu, and click **Upload Blueprint**.
 
    .. figure:: images/30.png
 
 #. Select **FiestaNoDB.json**.
 
-#. Update the **Blueprint Name** to include your initials. Even across different projects, Calm Blueprint names must be unique.
+#. Update the **Blueprint Name** to include your initials (ex. XYZ-FiestaNoDB). Even across different projects, Calm Blueprint names must be unique.
 
 #. Select *Initials*\ -Project as the Calm project and click **Upload**.
 
    .. figure:: images/31.png
 
-#. In order to launch the Blueprint you must first assign a network to the VM. Select the **NodeReact** Service, and in the **VM** Configuration menu on the right, select **Secondary** as the **NIC 1** network.
+#. In order to launch the blueprint, you must first assign a network to the VM. Select the **NodeReact** Service, and in the *VM Configuration* section on the right, within the *NETWORK ADAPTERS (NICS)* section, select **Primary** as the **NIC 1** network.
 
    .. figure:: images/32a.png
 
-#. Click **Credentials** to define a private key used to authenticate to the CentOS VM that will be provisioned by the Blueprint.
+#. Click **Credentials** (top bar) to define a private key used to authenticate to the CentOS VM that will be provisioned.
 
 #. Expand the **CENTOS** credential and use your preferred SSH key, or paste in the following value as the **SSH Private Key**:
 
@@ -97,25 +95,23 @@ Manipulating data using **SQL Server Management Studio** is boring. In this sect
 
 #. Click **Save** and click **Back** once the Blueprint has completed saving.
 
-#. Click **Launch** and fill out the following fields:
+#. Click **Launch** and fill out the following fields, and click **Create**.
 
    - **Name of the Application** - *Initials*\ -Fiesta
-   - **db_password** - nutanix/4u
-   - **db_name** - *Initials*\ -fiesta (as configured when you deployed through Era)
-   - **db_dialect** - mssql
-   - **db_domain_name** - ntnxlab.local
-   - **db_username** - Administrator
    - **db_host_address** - The IP of your *Initials*\ **-MSSQL2** VM
+   - **db_username** - Administrator
+   - **db_domain_name** - ntnxlab.local
+   - **db_dialect** - mssql
+   - **db_name** - *Initials*\ -fiesta (as configured when you deployed through Era)
+   - **db_password** - nutanix/4u
 
    .. figure:: images/34.png
 
-#. Click **Create**.
-
-#. Select the **Audit** tab to monitor the deployment. This process should take < 5 minutes.
+#. Select the **Audit** tab to monitor the deployment. This process should take approximately 5 minutes.
 
    .. figure:: images/35.png
 
-#. Once the application status changes to **Running**, select the **Services** tab and select the **NodeReact** service to obtain the **IP Address** of your web server.
+#. Once the application status changes to **Running**, select the **Services** tab, then the **NodeReact** service to obtain the IP address of your web server.
 
    .. figure:: images/36.png
 

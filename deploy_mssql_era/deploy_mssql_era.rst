@@ -6,14 +6,12 @@ Deploying MS SQL with Era
 
 **In this lab you will create a MSSQL Software Profile, and use Era to deploy a new MSSQL Database Server.**
 
-
-
 Creating a New MSSQL Database Server
 ++++++++++++++++++++++++++++++++++++
 
 You've completed all the one time operations required to be able to provision any number of SQL Server VMs. Follow the steps below to provision a database of a fresh database server, with best practices automatically applied by Era.
 
-#. In **Era**, select **Databases** from the dropdown menu and **Sources** from the lefthand menu.
+#. Within **Era**, select **Databases** from the dropdown menu, and **Sources** from the left-hand menu.
 
 #. Click **+ Provision > Microsoft SQL Server > Database**.
 
@@ -26,7 +24,7 @@ You've completed all the one time operations required to be able to provision an
    - **Description** - (Optional)
    - **Software Profile** - *Initials*\ _MSSQL_2016
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
-   - **Network Profile** - Primary_MSSQL_NETWORK
+   - **Network Profile** - Primary_MSSQL_Network
    - Select **Join Domain**
    - **Windows Domain Profile** - NTNXLAB
    - **Windows License Key** - (Leave Blank)
@@ -40,9 +38,9 @@ You've completed all the one time operations required to be able to provision an
 
    .. note::
 
-      A **Instance Name** is the name of the database server, this is not the hostname. The default is **MSSQLSERVER**. You can install multiple separate instances of MSSQL on the same server as long as they have different instance names. This was more common on a physical server, however, you do not need additional MSSQL licenses to run multiple instances of SQL on the same server.
+      An **Instance Name** is the name of the database server, this is not the hostname. The default is **MSSQLSERVER**. You can install multiple separate instances of MSSQL on the same server as long as they have different instance names. This was more common on a physical server, however, you do not need additional MSSQL licenses to run multiple instances of SQL on the same server.
 
-      **Server Collation** is a configuration setting that determines how the database engine should treat character data at the server, database, or column level. SQL Server includes a large set of collations for handling the language and regional differences that come with supporting users and applications in different parts of the world. A collation can also control case sensitivity on database. You can have different collations for each database on a single instance. The default collation is **SQL_Latin1_General_CP1_CI_AS** which breaks out like below:
+      **Server Collation** is a configuration setting that determines how the database engine should treat character data at the server, database, or column level. SQL Server includes a large set of collations for handling the language and regional differences that come with supporting users and applications in different parts of the world. A collation can also control case sensitivity on a database. You can have different collations for each database on a single instance. The default collation is **SQL_Latin1_General_CP1_CI_AS** which breaks out like below:
 
       - **Latin1** makes the server treat strings using charset latin 1, basically **ASCII**
       - **CP1** stands for Code Page 1252. CP1252 is  single-byte character encoding of the Latin alphabet, used by default in the legacy components of Microsoft Windows for English and some other Western languages
@@ -65,9 +63,9 @@ You've completed all the one time operations required to be able to provision an
       Common applications for pre/post-installation scripts include:
 
       - Data masking scripts
-      - Register the database with DB monitoring solution
-      - Scripts to update DNS/IPAM
-      - Scripts to automate application setup, such as app-level cloning for Oracle PeopleSoft
+      - Register the database with a database monitoring solution
+      - Scripts to update DNS and/or IPAM
+      - Scripts to automate application setup
 
 #. Click **Next** and fill out the following fields to configure the Time Machine for your database:
 
@@ -86,7 +84,7 @@ You've completed all the one time operations required to be able to provision an
 
 #. Click **Provision** to begin creating your new database server VM and **fiesta** database.
 
-#. Select **Operations** from the dropdown menu to monitor the provisioning. This process should take approximately 20 minutes.
+#. Select **Operations** from the dropdown menu to monitor the provisioning. This process should take between 20-60 minutes.
 
    .. figure:: images/22.png
 
@@ -108,15 +106,17 @@ You've completed all the one time operations required to be able to provision an
 Exploring the Provisioned DB Server
 ++++++++++++++++++++++++++++++++++++
 
-#. In **Prism Element > Storage > Table > Volume Groups**, locate the **ERA_**\ *Initials*\ **_MSSQL2_\** VG and observe the layout on the **Virtual Disk** tab. <What does this tell us?>
+#. Within *Prism Element*, select **Storage > Table > Volume Groups**.
+
+#. Select the **ERA_**\ *Initials*\ **_MSSQL2_\** Volume Group (VG), and observe the layout by clicking on the **Virtual Disk** tab. What does this tell us?
 
    .. figure:: images/23.png
 
-#. View the disk layout of your newly provisioned VM in Prism. <What are all of these disks and how is this different from the original VM we registered?>
+#. View the disk layout of your newly provisioned VM in Prism. What are all of these disks, and how is this different from the original VM we registered?
 
    .. figure:: images/24.png
 
-#. In Prism, note the IP address of your *Initials*\ **-MSSQL2** VM and connect to it via RDP using the following credentials:
+#. Within Prism, note the IP address of your *Initials*\ **-MSSQL2** VM, and connect to it via RDP/Console using the following credentials:
 
    - **User Name** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
@@ -130,17 +130,15 @@ Migrating Fiesta App Data
 
 In this exercise you will import data directly into your database from a backup exported from another database. While this is a suitable method for migrating data, it potentially involved downtime for an application, or our database potentially not having the very latest data.
 
-Another approach could involve adding your new Era database to an existing database cluster (AlwaysOn Availability Group) and having it replicate to your Era provisioned database. Application level synchronous or asynchronous replication (such as SQL Server AAG or Oracle RAC) can be used to provide Era benefits like cloning and Time Machine to databases whose production instances run on bare metal or non-Nutanix infrastructure.
+Another approach could involve adding your new Era database to an existing database cluster (AlwaysOn Availability Group - AAG) and having it replicate to your Era provisioned database. This kind of application-level synchronous or asynchronous replication can be used to provide additional benefit to using Era, such as cloning and Time Machine to databases whose production instances run on bare metal and/or non-Nutanix infrastructure.
 
-#. From your *Initials*\ **-MSSQL2** RDP session, launch **Microsoft SQL Server Management Studio** and click **Connect** to authenticate as the currently logged in user.
+#. From your *Initials*\ **-MSSQL2** session, launch **Microsoft SQL Server Management Studio**, and click **Connect** to authenticate as the currently logged in user.
 
-   .. figure:: images/26.png
+#. Expand the **Databases** > *Initials*\ -fiesta, and note that it contains no tables.
 
-#. Expand the *Initials*\ **-fiesta** database and note that it contains no tables. With the database selected, click **New Query** from the menu to import your production application data.
+#. Right-click the *Initials*\ -fiesta database, and select **New Query** from the menu to import your production application data.
 
-   .. figure:: images/27.png
-
-#. Copy and paste the following script into the query editor and click **Execute**:
+#. Copy and paste the following script into the query editor (right-hand side), and click **Execute**.
 
    .. literalinclude:: FiestaDB-MSSQL.sql
      :caption: FiestaDB Data Import Script
@@ -148,9 +146,9 @@ Another approach could involve adding your new Era database to an existing datab
 
    .. figure:: images/28.png
 
-#. Note the status bar should read **Query executed successfully**.
+   .. note:: The status bar at the bottom of the screen should read *Query executed successfully*.
 
-#. You can view the contents of the database by clicking **New Query** and executing the following:
+#. Optionally, you can view the contents of the database by performing another query, this time using the following script:
 
    .. code-block:: sql
 
@@ -160,8 +158,9 @@ Another approach could involve adding your new Era database to an existing datab
 
    .. figure:: images/29.png
 
-#. In **Era > Time Machines**, select your *initials*\ **-fiesta_TM** Time Machine. Select **Actions > Log Catch Up > Yes** to ensure the imported data has been flushed to disk prior to the cloning operation in the next lab.
+#. Within Era, select **Time Machines** from the dropdown.
 
+#. Select your *initials*\ **-fiesta_TM** Time Machine, and then click **Actions > Log Catch Up > Yes** to ensure the imported data has been committed to disk prior to the cloning operation in the next lab.
 
 Takeaways
 +++++++++

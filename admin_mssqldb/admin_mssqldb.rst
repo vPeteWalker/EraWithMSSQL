@@ -6,12 +6,12 @@ DB Administration with Era
 
 We will now see how to perform normal database admin task with Era.
 
-**In this lab you will Administor your MSSQL DB**
+**In this lab you will Administer your MSSQL DB**
 
 Register Your Database
 ++++++++++++++++++++++
 
-#. In **Era**, select **Databases** from the dropdown menu, and then **Sources** from the left-hand menu.
+#. Within **Era**, select **Databases** from the dropdown menu, and then **Sources** from the left-hand menu.
 
    .. figure:: images/1.png
 
@@ -22,7 +22,7 @@ Register Your Database
 
    .. figure:: images/2.png
 
-#. Click **Next**
+#. Click **Next**.
 
    - **Unregistered Databases** - SampleDB
    - **Database Name in Era** - *Initials*\ -LABSQLDB
@@ -47,20 +47,20 @@ Register Your Database
 Snapshot Your Database
 ++++++++++++++++++++++
 
-Before we take a manual snapshot of our Database, lets write a new table into SampleDB.
+Before we take a manual snapshot of our Database, let's write a new table into SampleDB.
 
 Write New Table Into Database
 .............................
 
 #. RDP/Console into your *UserXX*\ **-MSSQLSourceVM**.
 
-#. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
+#. Open SQL Server Managment Studio (SSMS), choose **Windows Authentication** from the *Authentication* dropdown, and click **Connect**.
 
-#. Right-Click on **SampleDB** and Select **New Query**.
+#. Right-Click on **SampleDB**, and select **New Query**.
 
    .. figure:: images/5.png
 
-#. **Execute** the following SQL Query:
+#. Copy and paste the following into the query window (right-hand pane) and click **Execute**.
 
    .. code-block:: Bash
 
@@ -68,14 +68,14 @@ Write New Table Into Database
 
    .. figure:: images/6.png
 
-#. Verify the new table is there by doing a refresh on **Tables**.
+#. Verify the new table has been created by first expanding *SampleDB*, right-clicking on *Tables* and clicking **Refresh**. Then ensure the *dbo.testlabtable* exists under *Tables* before proceeding.
 
 Take Manual Snapshot of Database
 ................................
 
-#. In **Era**, select **Databases** from the dropdown menu, and then **Sources** from the left-hand menu.
+#. Within **Era**, select **Databases** from the dropdown menu, and then **Sources** from the left-hand menu.
 
-#. Click on the Time Machine for your Database (ex. *Initials*\ -LABSQLDB_TM).
+#. Click on the *Time Machine* for your Database (ex. *Initials*\ -LABSQLDB_TM).
 
    .. figure:: images/7.png
 
@@ -114,6 +114,8 @@ Clone Your Database Server & Database
 
    .. figure:: images/11.png
 
+#. Click **Next**.
+
    - **Clone Name** - *Initials*\ -LABSQLDB_Clone1
    - **Database Name on VM** - SampleDB_Clone1
    - **Instance Name** - MSSQLSERVER
@@ -132,38 +134,38 @@ There are times when a table or other data gets deleted (by accident), and you w
 Delete Table
 ............
 
-#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
+#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM.
 
-#. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
+#. Open SQL Server Managment Studio (SSMS), choose **Windows Authentication** from the *Authentication* dropdown, and click **Connect**.
 
-#. Expand **SampleDB_Clone1 > Tables**.
+#. Expand **Databases > SampleDB_Clone1 > Tables**.
 
-#. Right-Click on **dbo.testlabtable**, select **Delete**, and then **OK**.
+#. Right-click on *dbo.testlabtable*, select **Delete**, and then **OK**.
 
-Clone Refresh
-.............
+Refresh your clone
+..................
 
-#. In **Era**, select **Databases** from the dropdown menu, and then **Clones** from the left-hand menu.
+#. Within **Era**, select **Databases** from the dropdown menu, and then **Clones** from the left-hand menu.
 
-#. Select the Clone for your Database *Initials*\ -LABSQLDB_Clone1 and Click **Refresh**.
+#. Select the clone for your database *Initials*\ -LABSQLDB_Clone1, and click **Refresh**.
 
-   - **Snapshot** - *Initials*\ -MSSQL-1st-Snapshot (Date Time)
+#. Click the radio button for *Snapshot*, and choose the entry for *Initials*\ -MSSQL-1st-Snapshot (Date Time).
 
-#. Click **Refresh**
+#. Click **Refresh**.
 
 #. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 2-5 minutes.
 
    .. figure:: images/13.png
 
-Verify Table is Back
-....................
+Verify the previously deleted table has been restored
+.....................................................
 
-#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
+#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM.
 
-#. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
+#. Open SQL Server Managment Studio (SSMS), choose **Windows Authentication** from the *Authentication* dropdown, and click **Connect**.
 
-#. Expand **SampleDB_Clone1 > Tables**.
+#. Expand **Databases > SampleDB_Clone1 > Tables**.
 
-#. Perform a refresh on **Tables**.
+#. Right-click on on *Tables*, and choose **Refresh**.
 
-#. Verify **dbo.testlabtable** is there.
+#. Verify the table *dbo.testlabtable* has been restored.

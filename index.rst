@@ -14,7 +14,7 @@
    :name: _dbs
    :hidden:
 
-   deploy_mssql/deploy_mssql
+   configure_mssql/configure_mssql
    admin_mssqldb/admin_mssqldb
    deploy_mssql_era/deploy_mssql_era
    webtier/webtier
