@@ -4,7 +4,7 @@
 MSSQL Lab Setup
 ----------------------
 
-Welcome to the Databases bootcamp. This bootcamp is meant to provide you with first hand experience in why Nutanix is an ideal platform for Database workloads.
+Welcome to the Databases bootcamp. This bootcamp is meant to provide you with first-hand experience in why Nutanix is an ideal platform for Database workloads.
 
 Historically, it has been a challenge to virtualize SQL Server because of the high cost of traditional virtualization stacks and the impact that a SAN-based architecture can have on performance. Businesses and their IT departments have constantly fought to balance cost, operational simplicity, and consistent predictable performance.
 

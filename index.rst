@@ -114,9 +114,9 @@ Three/Four node HPOC clusters
 
 Three or four node Hosted POC clusters follow a standard naming convention:
 
-- **Cluster Name** - POC\ *XYZ*
-- **Subnet** - 10.\ **21**\ .\ *XYZ*\ .0
-- **Cluster IP** - 10.\ **21**\ .\ *XYZ*\ .37
+- **Cluster Name** - POC\ *XXX*
+- **Subnet** - 10.\ **21**\ .\ *XXX*\ .0
+- **Cluster IP** - 10.\ **21**\ .\ *XXX*\ .37
 
 For example:
 
@@ -125,7 +125,7 @@ For example:
 - **Cluster IP** - 10.21.55.37 for the VIP of the Cluster
 
 
-Throughout the Workshop there are multiple instances where you will need to substitute *XYZ* with the correct octet for your subnet, for example:
+Throughout the Workshop there are multiple instances where you will need to substitute *XXX* with the correct octet for your subnet, for example:
 
 .. list-table::
   :widths: 25 75
@@ -133,11 +133,11 @@ Throughout the Workshop there are multiple instances where you will need to subs
 
   * - IP Address
     - Description
-  * - 10.38.\ *XYZ*\ .37
+  * - 10.38.\ *XXX*\ .37
     - Nutanix Cluster Virtual IP
-  * - 10.38.\ *XYZ*\ .39
+  * - 10.38.\ *XXX*\ .39
     - **PC** VM IP, Prism Central
-  * - 10.38.\ *XYZ*\ .41
+  * - 10.38.\ *XXX*\ .41
     - **DC** VM IP, NTNXLAB.local Domain Controller
 
 Each cluster is configured with 2 VLANs which can be used for VMs:
@@ -151,13 +151,13 @@ Each cluster is configured with 2 VLANs which can be used for VMs:
     - VLAN
     - DHCP Scope
   * - Primary
-    - 10.38.\ *XYZ*\ .1/25
+    - 10.38.\ *XXX*\ .1/25
     - 0
-    - 10.38.\ *XYZ*\ .50-10.21.\ *XYZ*\ .124
+    - 10.38.\ *XXX*\ .50-10.21.\ *XXX*\ .124
   * - Secondary
-    - 10.38.\ *XYZ*\ .129/25
-    - *XYZ1*
-    - 10.38.\ *XYZ*\ .132-10.21.\ *XYZ*\ .253
+    - 10.38.\ *XXX*\ .129/25
+    - *XXX1*
+    - 10.38.\ *XXX*\ .132-10.21.\ *XXX*\ .253
 
 Single Node HPOC Clusters
 -------------------------

@@ -82,7 +82,7 @@ Prism Ultimate includes the SQL Server monitoring pack which allows IT admin to 
 
 #. For the next part of this lab, if you understand how to set up Playbooks already and wish to do so, you have the option to skip the setup of the next Playbook. Instead follow the steps under the Importing/Exporting Playbooks section below. We recommend reading through the steps to create the Playbook to better understand what it is doing. 
 
-#. Now we will create the playbook which we want to execute when this alert policy is triggered. The actions we want to take are running a powershell script on the VM to collect logs and then uploading those logs onto a google drive so we can review what went wrong. Choose **Alert** as the trigger for your playbook and specifiy the alert policy you just created. **If you chose to import the Playbook for this lab instead of creating it, you may skip this step**  
+#. Now we will create the playbook which we want to execute when this alert policy is triggered. The actions we want to take are running a powershell script on the VM to collect logs and then uploading those logs onto a google drive so we can review what went wrong. Choose **Alert** as the trigger for your playbook and specify the alert policy you just created. **If you chose to import the Playbook for this lab instead of creating it, you may skip this step**  
 
    .. figure:: images/sqlplay1.png
 
