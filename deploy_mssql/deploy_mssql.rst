@@ -40,7 +40,7 @@ Source MSSQL VM
   #. Fill out the following fields:
 
      - **Number Of Clones** - 1
-     - **Name** - *Initials*-MSSQL
+     - **Name** - *UserXX*-MSSQL
      - **vCPU(s)** - 2
      - **Number of Cores per vCPU** - 1
      - **Memory** - 4 GiB
@@ -184,9 +184,9 @@ Before additional SQL Server VMs can be provisioned, a Software Profile must fir
 
 #. Click **+ Create > Microsoft SQL Server** and fill out the following fields:
 
-   - **Profile Name** - *Initials*\ _MSSQL_2016
+   - **Profile Name** - *UserXX*\ _MSSQL_2016
    - **Description** - (Optional)
-   - **Database Server** - Select your registered *Initials*\ -MSSQL VM
+   - **Database Server** - Select your registered *UserXX*\ -MSSQL VM
 
    .. figure:: images/15.png
 

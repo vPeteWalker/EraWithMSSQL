@@ -76,7 +76,7 @@ Prism Ultimate includes the SQL Server monitoring pack which allows IT admin to 
 
    .. figure:: images/bufferalert1.png
 
-#. We will be stressing the SQL Server in a later step using an application called **HammerDB**. The stress will cause the metric to go very high after a delay of a few minutes. We will keep the alert threshold at a fair number so to get the alert policy raised as soon as possible for our example. Set the static threshold for the critical alert at **100mib**. Also change the inteval for how long the conditions should persist before triggering an alert to **0 Minutes** as shown below, so that the alert is triggered immediately with a spike in the metric. Do make sure to change the policy name to **Initials - SQL Server Buffer Pool Size**. Click save and go to playbooks under the Operations tab. 
+#. We will be stressing the SQL Server in a later step using an application called **HammerDB**. The stress will cause the metric to go very high after a delay of a few minutes. We will keep the alert threshold at a fair number so to get the alert policy raised as soon as possible for our example. Set the static threshold for the critical alert at **100mib**. Also change the inteval for how long the conditions should persist before triggering an alert to **0 Minutes** as shown below, so that the alert is triggered immediately with a spike in the metric. Do make sure to change the policy name to **UserXX - SQL Server Buffer Pool Size**. Click save and go to playbooks under the Operations tab. 
 
    .. figure:: images/bufferalert2.png
 
@@ -133,7 +133,7 @@ Prism Ultimate includes the SQL Server monitoring pack which allows IT admin to 
 
   .. figure:: images/sqlplay9.png
 
-#. Click **Save & Close** button and save it with a name “*Initials* - High Buffer Pool Size”. **Be sure to enable the ‘Enabled’ toggle.** **If you chose to import the Playbook for this lab instead of creating it, you may skip this step**
+#. Click **Save & Close** button and save it with a name “*UserXX* - High Buffer Pool Size”. **Be sure to enable the ‘Enabled’ toggle.** **If you chose to import the Playbook for this lab instead of creating it, you may skip this step**
 
   .. figure:: images/sqlplay10.png
 
@@ -154,7 +154,7 @@ Prism Ultimate includes the SQL Server monitoring pack which allows IT admin to 
 
   .. figure:: images/sqllogfile.png
 
-#. Switch back to the previous tab with the Prism Central console open. Open up the details for the **`Initials` - High Buffer Pool Size** Playbook that you created and click the **Plays** tab towards the top of the view to take a look at the Plays that executed for this playbook. The sections in this view can be expanded to show more details for each item. If there were any errors, they would also be surfaced in this view.
+#. Switch back to the previous tab with the Prism Central console open. Open up the details for the **`UserXX` - High Buffer Pool Size** Playbook that you created and click the **Plays** tab towards the top of the view to take a look at the Plays that executed for this playbook. The sections in this view can be expanded to show more details for each item. If there were any errors, they would also be surfaced in this view.
 
  .. figure:: images/sqlplay11.png
 
@@ -194,7 +194,7 @@ X-Play now has the ability to import and export playbooks across Prism Centrals.
 
  .. figure:: images/import7.png
 
-#. Once you have changed these fields click on **Save & Close**. If validation errors are still present, the pop-up will say so. otherwise remember to click **Enable** and add your Initials to the playbook name before clicking **Save**
+#. Once you have changed these fields click on **Save & Close**. If validation errors are still present, the pop-up will say so. otherwise remember to click **Enable** and add your UserXX to the playbook name before clicking **Save**
 
  .. figure:: images/import8.png
 
@@ -220,7 +220,7 @@ Prism Ultimate gives the capability to discover applications running on your ESX
 
  .. figure:: images/appdiscovery4.png
 
-#. You can identify this app by the Ports that will be auto-filled by Discovery. Name this app, example **Initials - My Special App** and click on **Save and Apply**. 
+#. You can identify this app by the Ports that will be auto-filled by Discovery. Name this app, example **UserXX - My Special App** and click on **Save and Apply**. 
 
  .. figure:: images/appdiscovery5.png
 

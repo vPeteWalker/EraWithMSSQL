@@ -20,7 +20,7 @@ Lab Agenda
 Install HammerDB
 ++++++++++++++++++++
 
-#. Select your *Initials*-MSSQL-Manual VM and click **Actions > Power On**.
+#. Select your *UserXX*-MSSQL-Manual VM and click **Actions > Power On**.
 
 #. Log in to the VM using Remote Desktop Client/Console using the Administrator password you configured in **Manual VM Deployment** in :ref:`deploy_mssql` lab.
 

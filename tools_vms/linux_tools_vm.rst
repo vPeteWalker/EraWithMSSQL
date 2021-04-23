@@ -22,7 +22,7 @@ In **Prism Central** > select :fa:`bars` **> Virtual Infrastructure > VMs**, and
 
 Fill out the following fields:
 
-- **Name** - *Initials*-Linux-ToolsVM
+- **Name** - *UserXX*-Linux-ToolsVM
 - **Description** - (Optional) Description for your VM.
 - **vCPU(s)** - 1
 - **Number of Cores per vCPU** - 2

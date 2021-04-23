@@ -13,7 +13,7 @@ Creating a New MSSQL Database Server
 
 You've completed all the one time operations required to be able to provision any number of SQL Server VMs. Follow the steps below to provision a database of a fresh database server, with best practices automatically applied by Era.
 
-#. In **Era**, select **Databases** from the dropdown menu and **Sources** from the lefthand menu.
+#. In **Era**, select **Databases** from the dropdown menu and **Sources** from the left-hand menu.
 
 #. Click **+ Provision > Microsoft SQL Server > Database**.
 
@@ -22,9 +22,9 @@ You've completed all the one time operations required to be able to provision an
 #. In the **Provision a SQL Server Database** wizard, fill out the following fields to configure the Database Server:
 
    - **Database Server VM** - Create New Server
-   - **Database Server Name** - *Initials*\ -MSSQL2
+   - **Database Server Name** - *UserXX*\ -MSSQL2
    - **Description** - (Optional)
-   - **Software Profile** - *Initials*\ _MSSQL_2016
+   - **Software Profile** - *UserXX*\ _MSSQL_2016
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
    - **Network Profile** - Primary_MSSQL_NETWORK
    - Select **Join Domain**
@@ -53,7 +53,7 @@ You've completed all the one time operations required to be able to provision an
 
 #. Click **Next**, and fill out the following fields to configure the Database:
 
-   - **Database Name** - *Initials*\ -fiesta
+   - **Database Name** - *UserXX*\ -fiesta
    - **Description** - (Optional)
    - **Size (GiB)** - 200 (Default)
    - **Database Parameter Profile** - DEFAULT_SQLSERVER_DATABASE_PARAMS
@@ -77,7 +77,7 @@ You've completed all the one time operations required to be able to provision an
 
         <strong><font color="red">It is critical to select the BRONZE SLA in the following step. The default BRASS SLA does NOT include Continuous Protection snapshots.</font></strong>
 
-   - **Name** - *initials*\ -fiesta_TM (Default)
+   - **Name** - *UserXX*\ -fiesta_TM (Default)
    - **Description** - (Optional)
    - **SLA** - DEFAULT_OOB_BRONZE_SLA
    - **Schedule** - (Defaults)
@@ -108,7 +108,7 @@ You've completed all the one time operations required to be able to provision an
 Exploring the Provisioned DB Server
 ++++++++++++++++++++++++++++++++++++
 
-#. In **Prism Element > Storage > Table > Volume Groups**, locate the **ERA_**\ *Initials*\ **_MSSQL2_\** VG and observe the layout on the **Virtual Disk** tab. <What does this tell us?>
+#. In **Prism Element > Storage > Table > Volume Groups**, locate the **ERA_**\ *UserXX*\ **_MSSQL2_\** VG and observe the layout on the **Virtual Disk** tab. <What does this tell us?>
 
    .. figure:: images/23.png
 
@@ -116,7 +116,7 @@ Exploring the Provisioned DB Server
 
    .. figure:: images/24.png
 
-#. In Prism, note the IP address of your *Initials*\ **-MSSQL2** VM and connect to it via RDP using the following credentials:
+#. In Prism, note the IP address of your *UserXX*\ **-MSSQL2** VM and connect to it via RDP using the following credentials:
 
    - **User Name** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
@@ -132,11 +132,11 @@ In this exercise you will import data directly into your database from a backup 
 
 Another approach could involve adding your new Era database to an existing database cluster (AlwaysOn Availability Group) and having it replicate to your Era provisioned database. Application level synchronous or asynchronous replication (such as SQL Server AAG or Oracle RAC) can be used to provide Era benefits like cloning and Time Machine to databases whose production instances run on bare metal or non-Nutanix infrastructure.
 
-#. From your *Initials*\ **-MSSQL2** RDP session, launch **Microsoft SQL Server Management Studio** and click **Connect** to authenticate as the currently logged in user.
+#. From your *UserXX*\ **-MSSQL2** RDP session, launch **Microsoft SQL Server Management Studio** and click **Connect** to authenticate as the currently logged in user.
 
    .. figure:: images/26.png
 
-#. Expand the *Initials*\ **-fiesta** database and note that it contains no tables. With the database selected, click **New Query** from the menu to import your production application data.
+#. Expand the *UserXX*\ **-fiesta** database and note that it contains no tables. With the database selected, click **New Query** from the menu to import your production application data.
 
    .. figure:: images/27.png
 
@@ -160,7 +160,7 @@ Another approach could involve adding your new Era database to an existing datab
 
    .. figure:: images/29.png
 
-#. In **Era > Time Machines**, select your *initials*\ **-fiesta_TM** Time Machine. Select **Actions > Log Catch Up > Yes** to ensure the imported data has been flushed to disk prior to the cloning operation in the next lab.
+#. In **Era > Time Machines**, select your *UserXX*\ **-fiesta_TM** Time Machine. Select **Actions > Log Catch Up > Yes** to ensure the imported data has been flushed to disk prior to the cloning operation in the next lab.
 
 Provision Fiesta Web Tier
 +++++++++++++++++++++++++
@@ -177,9 +177,9 @@ Manipulating data using **SQL Server Management Studio** is boring. In this sect
 
 #. Select **FiestaNoDB.json**.
 
-#. Update the **Blueprint Name** to include your initials. Even across different projects, Calm Blueprint names must be unique.
+#. Update the **Blueprint Name** to include your UserXX. Even across different projects, Calm Blueprint names must be unique.
 
-#. Select *Initials*\ -Project as the Calm project and click **Upload**.
+#. Select *UserXX*\ -Project as the Calm project and click **Upload**.
 
    .. figure:: images/31.png
 
@@ -227,13 +227,13 @@ Manipulating data using **SQL Server Management Studio** is boring. In this sect
 
 #. Click **Launch** and fill out the following fields:
 
-   - **Name of the Application** - *Initials*\ -Fiesta
+   - **Name of the Application** - *UserXX*\ -Fiesta
    - **db_password** - nutanix/4u
-   - **db_name** - *Initials*\ -fiesta (as configured when you deployed through Era)
+   - **db_name** - *UserXX*\ -fiesta (as configured when you deployed through Era)
    - **db_dialect** - mssql
    - **db_domain_name** - ntnxlab.local
    - **db_username** - Administrator
-   - **db_host_address** - The IP of your *Initials*\ **-MSSQL2** VM
+   - **db_host_address** - The IP of your *UserXX*\ **-MSSQL2** VM
 
    .. figure:: images/34.png
 

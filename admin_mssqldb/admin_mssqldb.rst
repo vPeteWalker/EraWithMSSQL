@@ -25,7 +25,7 @@ Register Your Database
 #. Click **Next**
 
    - **Unregistered Databases** - SampleDB
-   - **Database Name in Era** - *Initials*\ -LABSQLDB
+   - **Database Name in Era** - *UserXX*\ -LABSQLDB
 
    .. figure:: images/3.png
 
@@ -33,7 +33,7 @@ Register Your Database
 
    - **Recovery Model** - Full
    - **Manage Log Backups with** - Era
-   - **Name** - *Initials*\ -LABSSQLDB_TM
+   - **Name** - *UserXX*\ -LABSSQLDB_TM
    - **SLA** - DEFAULT_OOB_BRASS_SLA (no continuous replay)
 
    .. figure:: images/4.png
@@ -75,7 +75,7 @@ Take Manual Snapshot of Database
 
 #. In **Era**, select **Databases** from the dropdown menu, and then **Sources** from the left-hand menu.
 
-#. Click on the Time Machine for your Database (ex. *Initials*\ -LABSQLDB_TM).
+#. Click on the Time Machine for your Database (ex. *UserXX*\ -LABSQLDB_TM).
 
    .. figure:: images/7.png
 
@@ -83,7 +83,7 @@ Take Manual Snapshot of Database
 
    .. figure:: images/8.png
 
-   - **Snapshot Name** - *Initials*\ -MSSQL-1st-Snapshot
+   - **Snapshot Name** - *UserXX*\ -MSSQL-1st-Snapshot
 
    .. figure:: images/9.png
 
@@ -96,25 +96,25 @@ Take Manual Snapshot of Database
 Clone Your Database Server & Database
 +++++++++++++++++++++++++++++++++++++
 
-#. In **Era**, select **Time Machines** from the dropdown menu, and then select *Initials*\ -LABSQLDB_TM.
+#. In **Era**, select **Time Machines** from the dropdown menu, and then select *UserXX*\ -LABSQLDB_TM.
 
 #. Click **Actions > Create Database Clone > Database**.
 
-   - **Snapshot** - *Initials*\ -MSSQL-1st-Snapshot (Date Time)
+   - **Snapshot** - *UserXX*\ -MSSQL-1st-Snapshot (Date Time)
 
    .. figure:: images/10.png
 
 #. Click **Next**.
 
    - **Database Server** - Create New Server
-   - **Database Server Name** - *Initials*\ -MSSQL_Clone1
+   - **Database Server Name** - *UserXX*\ -MSSQL_Clone1
    - **Compute Profile** - DEFAULT_OOB_COMPUTE
    - **Network Profile** - Primary-MSSQL-Network
    - **Administrator Password** - Nutanix/4u
 
    .. figure:: images/11.png
 
-   - **Clone Name** - *Initials*\ -LABSQLDB_Clone1
+   - **Clone Name** - *UserXX*\ -LABSQLDB_Clone1
    - **Database Name on VM** - SampleDB_Clone1
    - **Instance Name** - MSSQLSERVER
 
@@ -132,7 +132,7 @@ There are times when a table or other data gets deleted (by accident), and you w
 Delete Table
 ............
 
-#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
+#. RDP/Console into your *UserXX*\ -MSSQL_Clone1 VM
 
 #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
 
@@ -145,9 +145,9 @@ Clone Refresh
 
 #. In **Era**, select **Databases** from the dropdown menu, and then **Clones** from the left-hand menu.
 
-#. Select the Clone for your Database *Initials*\ -LABSQLDB_Clone1 and Click **Refresh**.
+#. Select the Clone for your Database *UserXX*\ -LABSQLDB_Clone1 and Click **Refresh**.
 
-   - **Snapshot** - *Initials*\ -MSSQL-1st-Snapshot (Date Time)
+   - **Snapshot** - *UserXX*\ -MSSQL-1st-Snapshot (Date Time)
 
 #. Click **Refresh**
 
@@ -158,7 +158,7 @@ Clone Refresh
 Verify Table is Back
 ....................
 
-#. RDP/Console into your *Initials*\ -MSSQL_Clone1 VM
+#. RDP/Console into your *UserXX*\ -MSSQL_Clone1 VM
 
 #. Open SQL Server Managment Studio (SSMS), and **Connect** using Windows Authentication.
 
