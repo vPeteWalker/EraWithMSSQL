@@ -29,7 +29,7 @@ Source MSSQL VM
 ..  Clone Source MSSQL VM
   +++++++++++++++++++++
 
-  **In this lab you will deploy a Microsoft SQL Server VM, by cloning a source MSSQL VM. This VM will act as a master image to create a profile for deploying additional SQL VMs using Era.**
+  **In this lab you will deploy a Microsoft SQL Server VM, by cloning a source MSSQL VM. This VM will act as a gold image to create a profile for deploying additional SQL VMs using Era.**
 
   #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
 
