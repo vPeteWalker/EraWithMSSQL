@@ -47,7 +47,7 @@ Register Your Database
 Snapshot Your Database
 ++++++++++++++++++++++
 
-Before we take a manual snapshot of our Database, lets write a new table into SampleDB.
+Before we take a manual snapshot of our database, lets write a new table into SampleDB.
 
 Write New Table Into Database
 .............................
@@ -145,7 +145,7 @@ Clone Refresh
 
 #. In **Era**, select **Databases** from the dropdown menu, and then **Clones** from the left-hand menu.
 
-#. Select the Clone for your Database *UserXX*\ -LABSQLDB_Clone1 and Click **Refresh**.
+#. Select the clone for your database *UserXX*\ -LABSQLDB_Clone1 and Click **Refresh**.
 
    - **Snapshot** - *UserXX*\ -MSSQL-1st-Snapshot (Date Time)
 

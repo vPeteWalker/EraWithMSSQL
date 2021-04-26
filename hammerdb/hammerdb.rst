@@ -63,7 +63,7 @@ This will give you an opportunity to learn to use HammerDB tool and prepare you 
 
 #. Give the name of the database as **tpcc**.
 
-#. In the Database files table, scroll and select the path for tpcc and tpcc_log folder.
+#. In the database files table, scroll and select the path for tpcc and tpcc_log folder.
 
 #. For tpcc, set path to ``E:\data``.
 
@@ -129,7 +129,7 @@ This will give you an opportunity to learn to use HammerDB tool and prepare you 
 
    .. figure:: images/destroyvirtusers.png
 
-#. Double click on **Driver Script > Options**. Make sure **SQL Server Database** name is **tpcc** (the database you created in the previous few steps).
+#. Double click on **Driver Script > Options**. Make sure *SQL Server Database* name is **tpcc** (the database you created in the previous few steps).
 
 #. Select "TPC-C driver script" as **Timed Driver Script**.
 
@@ -183,7 +183,7 @@ Let's simulate a scenario where best practices for MS SQL databases are not foll
 
    .. figure:: images/destroyvirtusers.png
 
-#. Double click on **Driver Script > Options**. Make sure **SQL Server Database** name is **tpcc1** (the database you created in the previous few steps).
+#. Double click on **Driver Script > Options**. Make sure *SQL Server Database* name is **tpcc1** (the database you created in the previous few steps).
 
 #. Select "TPC-C driver script" as **Timed Driver Script**.
 

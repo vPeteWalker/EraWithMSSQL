@@ -4,7 +4,7 @@
 Deploying MS SQL with Era
 -------------------------
 
-**In this lab you will create a MSSQL Software Profile, and use Era to deploy a new MSSQL Database Server.**
+**In this lab you will create a MSSQL Software Profile, and use Era to deploy a new MSSQL database server.**
 
 
 
@@ -19,7 +19,7 @@ You've completed all the one time operations required to be able to provision an
 
    .. figure:: images/18.png
 
-#. In the **Provision a SQL Server Database** wizard, fill out the following fields to configure the Database Server:
+#. In the **Provision a SQL Server Database** wizard, fill out the following fields to configure the database Server:
 
    - **Database Server VM** - Create New Server
    - **Database Server Name** - *UserXX*\ -MSSQL2
@@ -51,7 +51,7 @@ You've completed all the one time operations required to be able to provision an
 
       **Database Parameter Profiles** define the minimum server memory SQL Server should start with, as well as the maximum amount of memory SQL server will use. By default, it is set high enough that SQL Server can use all available server memory. You can also enable contained databases feature which will isolate the database from others on the instance for authentication.
 
-#. Click **Next**, and fill out the following fields to configure the Database:
+#. Click **Next**, and fill out the following fields to configure the database:
 
    - **Database Name** - *UserXX*\ -fiesta
    - **Description** - (Optional)
