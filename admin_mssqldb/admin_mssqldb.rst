@@ -40,7 +40,7 @@ Register Your Database
 
 #. Click **Register**.
 
-#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 3-5 minutes.
+#. Select **Operations** from the dropdown menu to monitor the progress. This process should take approximately 3-5 minutes.
 
    .. figure:: images/4a.png
 
@@ -122,7 +122,7 @@ Clone Your Database Server & Database
 
 #. Click **Clone**
 
-#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 10-15 minutes.
+#. Select **Operations** from the dropdown menu to monitor the progress. This process should take approximately 10-15 minutes.
 
 Delete Table and Clone Refresh
 ++++++++++++++++++++++++++++++

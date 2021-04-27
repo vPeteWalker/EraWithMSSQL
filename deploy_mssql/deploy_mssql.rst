@@ -165,7 +165,7 @@ You must meet the following requirements before you register a SQL Server databa
 
 #. Click **Register** to begin ingesting the database server into Era.
 
-#. Select **Operations** from the dropdown menu to monitor the registration. This process should take approximately 5 minutes.
+#. Select **Operations** from the dropdown menu to monitor the progress. This process should take approximately 5 minutes.
 
    .. figure:: images/13.png
 
