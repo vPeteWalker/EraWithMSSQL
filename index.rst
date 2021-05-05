@@ -1,4 +1,12 @@
-.. title:: Databases: Era with MSSQL Bootcamp
+.. title:: Databases: Era With MSSQL
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Era Lab Setup
+   :name: _dbs
+   :hidden:
+
+..   labsetup/labsetup
 
 .. toctree::
    :maxdepth: 2
@@ -6,20 +14,11 @@
    :name: _dbs
    :hidden:
 
-   labsetup/labsetup
-   deploy_mssql/deploy_mssql
+   configure_mssql/configure_mssql
    admin_mssqldb/admin_mssqldb
-
-.. toctree::
-  :maxdepth: 2
-  :caption: Creating an App with Era
-  :name: _apps_with_era
-  :hidden:
-
-  deploy_mssql_era/deploy_mssql_era
-  patch_sql/patch_sql
-..  aag/aag
-  cloning_with_calm/cloning_with_calm
+   deploy_mssql_era/deploy_mssql_era
+   webtier/webtier
+   patch_sql/patch_sql
 
 .. toctree::
   :maxdepth: 2
@@ -216,7 +215,7 @@ The network in the SNC config is using a /26 network. This splits the network ad
     - 10.38.x.75
     - 10.38.x.139
     - 10.38.x.203
-    - AutoDC IP(DC)
+    - AutoAD IP(DC)
     -
   * - 10.38.x.32-37
     - 10.38.x.96-101
