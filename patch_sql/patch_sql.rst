@@ -23,13 +23,13 @@ A software profile versions are created in Era to support patching of SQL Server
 
 #. Within Era, select **Profiles** from the drop-down menu.
 
-#. On the left-hand side, select **Software**, and then click on the software profile under which you wish to create a new version (i.e. *UserXX*\ _MSSQL_2016).
+#. On the left-hand side, select **Software**, and then click on the software profile under which you wish to create a new version (i.e. *USERXX*\ _MSSQL_2016).
 
 #. Click **Create**. The *Create Software Profile Version* window appears.
 
 #. Do the following in the indicated fields:
 
-   - **Name** *UserXX*\ _SQL2016_SP1_CU15
+   - **Name** *USERXX*\ _SQL2016_SP1_CU15
 
    - **Patch File Location** Upload ``SQLServer2016-KB4495257-x64.exe`` either from a file share (HPOC) or upload from your PC.
 
@@ -44,9 +44,9 @@ After profile creation is successful, you must publish the profile to make the p
 
 #. Within Era, select **Profiles** from the drop-down menu.
 
-#. On the left-hand side, select **Software**, and then click on the *UserXX*\ _MSSQL_2016 software profile.
+#. On the left-hand side, select **Software**, and then click on the *USERXX*\ _MSSQL_2016 software profile.
 
-#. Select the *UserXX*\ _SQL2016_SP1_CU15 profile version, and click **Update**. The *Update Software Profile Version* window appears.
+#. Select the *USERXX*\ _SQL2016_SP1_CU15 profile version, and click **Update**. The *Update Software Profile Version* window appears.
 
 #. In the *General* step, click on **Published**, and then click the check box for *By publishing this version of the software profile, I understand that Era will recommend that all databases using an earlier versions of this software profile should update to this new version. The recommendation will appear on the Database Server VM home page*.
 
@@ -63,7 +63,7 @@ Perform the following procedure to apply updates from the available software pro
 
 #. Within Era, select **Database Server VMs** from the drop-down list.
 
-#. Click on **List** from the left-hand side, then click the *UserXX*\ **-MSSQLSourceVM** database server VM for which you want to update the software profile version. The *Database Server VM Summary* page appears.
+#. Click on **List** from the left-hand side, then click the *USERXX*\ **-MSSQLSourceVM** database server VM for which you want to update the software profile version. The *Database Server VM Summary* page appears.
 
 #. Go to the *Software Profile Version* widget, and click **Update**. The *Update Database Server VM* window appears.
 
@@ -75,15 +75,15 @@ Perform the following procedure to apply updates from the available software pro
 
 #. Select the following in the indicated fields:
 
-   - **Software Profile** *UserXX*\ _MSSQL_2016
+   - **Software Profile** *USERXX*\ _MSSQL_2016
 
-   - **Version** *UserXX*\ _SQL2016_SP1_CU15
+   - **Version** *USERXX*\ _SQL2016_SP1_CU15
 
    - **Start Update** Now
 
    .. figure:: images/4.png
 
-#. Confirm the update by typing *UserXX*\ **-MSSQLSourceVM** in the text box, and click **Update**.
+#. Confirm the update by typing *USERXX*\ **-MSSQLSourceVM** in the text box, and click **Update**.
 
    A message appears at the top indicating that the operation to update a database has started. Click the message to monitor the progress of the operation. Alternatively, select **Operations** in the drop-down list of the main menu to monitor the progress of the operation.
 
