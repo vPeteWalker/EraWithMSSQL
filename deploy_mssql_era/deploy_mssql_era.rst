@@ -6,14 +6,12 @@ Deploying MS SQL with Era
 
 **In this lab you will create a MSSQL Software Profile, and use Era to deploy a new MSSQL database server.**
 
-
-
 Creating a New MSSQL Database Server
 ++++++++++++++++++++++++++++++++++++
 
 You've completed all the one time operations required to be able to provision any number of SQL Server VMs. Follow the steps below to provision a database of a fresh database server, with best practices automatically applied by Era.
 
-#. In **Era**, select **Databases** from the drop-down menu and **Sources** from the left-hand menu.
+#. Within **Era**, select **Databases** from the drop-down menu, and then **Sources** from the left-hand menu.
 
 #. Click **+ Provision > Microsoft SQL Server > Database**.
 
@@ -26,7 +24,7 @@ You've completed all the one time operations required to be able to provision an
    - **Description** - (Optional)
    - **Software Profile** - *USERXX*\ _MSSQL_2016
    - **Compute Profile** - CUSTOM_EXTRA_SMALL
-   - **Network Profile** - Primary_MSSQL_NETWORK
+   - **Network Profile** - Primary_MSSQL_Network
    - Select **Join Domain**
    - **Windows Domain Profile** - NTNXLAB
    - **Windows License Key** - (Leave Blank)
@@ -40,9 +38,9 @@ You've completed all the one time operations required to be able to provision an
 
    .. note::
 
-      A **Instance Name** is the name of the database server, this is not the hostname. The default is **MSSQLSERVER**. You can install multiple separate instances of MSSQL on the same server as long as they have different instance names. This was more common on a physical server, however, you do not need additional MSSQL licenses to run multiple instances of SQL on the same server.
+      An **Instance Name** is the name of the database server, this is not the hostname. The default is **MSSQLSERVER**. You can install multiple separate instances of MSSQL on the same server as long as they have different instance names. This was more common on a physical server, however, you do not need additional MSSQL licenses to run multiple instances of SQL on the same server.
 
-      **Server Collation** is a configuration setting that determines how the database engine should treat character data at the server, database, or column level. SQL Server includes a large set of collations for handling the language and regional differences that come with supporting users and applications in different parts of the world. A collation can also control case sensitivity on database. You can have different collations for each database on a single instance. The default collation is **SQL_Latin1_General_CP1_CI_AS** which breaks out like below:
+      **Server Collation** is a configuration setting that determines how the database engine should treat character data at the server, database, or column level. SQL Server includes a large set of collations for handling the language and regional differences that come with supporting users and applications in different parts of the world. A collation can also control case sensitivity on a database. You can have different collations for each database on a single instance. The default collation is **SQL_Latin1_General_CP1_CI_AS** which breaks out like below:
 
       - **Latin1** makes the server treat strings using charset latin 1, basically **ASCII**
       - **CP1** stands for Code Page 1252. CP1252 is  single-byte character encoding of the Latin alphabet, used by default in the legacy components of Microsoft Windows for English and some other Western languages
@@ -65,9 +63,9 @@ You've completed all the one time operations required to be able to provision an
       Common applications for pre/post-installation scripts include:
 
       - Data masking scripts
-      - Register the database with DB monitoring solution
-      - Scripts to update DNS/IPAM
-      - Scripts to automate application setup, such as app-level cloning for Oracle PeopleSoft
+      - Register the database with a database monitoring solution
+      - Scripts to update DNS and/or IPAM
+      - Scripts to automate application setup
 
 #. Click **Next** and fill out the following fields to configure the Time Machine for your database:
 
@@ -108,15 +106,17 @@ You've completed all the one time operations required to be able to provision an
 Exploring the Provisioned DB Server
 ++++++++++++++++++++++++++++++++++++
 
-#. In **Prism Element > Storage > Table > Volume Groups**, locate the **ERA_**\ *USERXX*\ **_MSSQL2_\** VG and observe the layout on the **Virtual Disk** tab. <What does this tell us?>
+#. Within *Prism Element*, select **Storage > Table > Volume Groups**.
+
+#. Select the **ERA_**\ *USERXX*\ **_MSSQL2_\** Volume Group (VG), and observe the layout by clicking on the **Virtual Disk** tab. What does this tell us?
 
    .. figure:: images/23.png
 
-#. View the disk layout of your newly provisioned VM in Prism. <What are all of these disks and how is this different from the original VM we registered?>
+#. View the disk layout of your newly provisioned VM in Prism. What are all of these disks, and how is this different from the original VM we registered?
 
    .. figure:: images/24.png
 
-#. In Prism, note the IP address of your *USERXX*\ **-MSSQL2** VM and connect to it via RDP using the following credentials:
+#. Within Prism, note the IP address of your *USERXX*\ **-MSSQL2** VM, and connect to it via RDP/Console using the following credentials:
 
    - **User Name** - NTNXLAB\\Administrator
    - **Password** - nutanix/4u
@@ -130,17 +130,15 @@ Migrating Fiesta App Data
 
 In this exercise you will import data directly into your database from a backup exported from another database. While this is a suitable method for migrating data, it potentially involved downtime for an application, or our database potentially not having the very latest data.
 
-Another approach could involve adding your new Era database to an existing database cluster (AlwaysOn Availability Group) and having it replicate to your Era provisioned database. Application level synchronous or asynchronous replication (such as SQL Server AAG or Oracle RAC) can be used to provide Era benefits like cloning and Time Machine to databases whose production instances run on bare metal or non-Nutanix infrastructure.
+Another approach could involve adding your new Era database to an existing database cluster (AlwaysOn Availability Group - AAG) and having it replicate to your Era provisioned database. This kind of application-level synchronous or asynchronous replication can be used to provide additional benefit to using Era, such as cloning and Time Machine to databases whose production instances run on bare metal and/or non-Nutanix infrastructure.
 
-#. From your *USERXX*\ **-MSSQL2** RDP session, launch **Microsoft SQL Server Management Studio** and click **Connect** to authenticate as the currently logged in user.
+#. From your *USERXX*\ **-MSSQL2** RDP session, launch **Microsoft SQL Server Management Studio**, and then click **Connect** to authenticate as the currently logged in user.
 
-   .. figure:: images/26.png
+#. Expand the **Databases** > *Initials*\ -fiesta, and note that it contains no tables.
 
-#. Expand the *USERXX*\ **-fiesta** database and note that it contains no tables. With the database selected, click **New Query** from the menu to import your production application data.
+#. Expand the *USERXX*\ **-fiesta** database, and note that it contains no tables. With the database selected, click **New Query** from the menu to import your production application data.
 
-   .. figure:: images/27.png
-
-#. Copy and paste the following script into the query editor and click **Execute**:
+#. Copy and paste the following script into the query editor (right-hand side), and click **Execute**.
 
    .. literalinclude:: FiestaDB-MSSQL.sql
      :caption: FiestaDB Data Import Script
@@ -148,9 +146,9 @@ Another approach could involve adding your new Era database to an existing datab
 
    .. figure:: images/28.png
 
-#. Note the status bar should read **Query executed successfully**.
+   .. note:: The status bar at the bottom of the screen should read *Query executed successfully*.
 
-#. You can view the contents of the database by clicking **New Query** and executing the following:
+#. Optionally, you can view the contents of the database by performing another query, this time using the following script:
 
    .. code-block:: sql
 
@@ -160,98 +158,9 @@ Another approach could involve adding your new Era database to an existing datab
 
    .. figure:: images/29.png
 
-#. In **Era > Time Machines**, select your *USERXX*\ **-fiesta_TM** Time Machine. Select **Actions > Log Catch Up > Yes** to ensure the imported data has been flushed to disk prior to the cloning operation in the next lab.
+#. Within Era, select **Time Machines** from the dropdown.
 
-Provision Fiesta Web Tier
-+++++++++++++++++++++++++
-
-Manipulating data using **SQL Server Management Studio** is boring. In this section you'll deploy the web tier of the application and connect it to your production database.
-
-
-#. `Download the Fiesta Blueprint by right-clicking here <https://raw.githubusercontent.com/nutanixworkshops/EraWithMSSQL/master/deploy_mssql_era/FiestaNoDB.json>`_. This single-VM Blueprint is used to provision only the web tier portion of the application.
-
-
-#. From **Prism Central** > select :fa:`bars` **> Services > Calm**. Select **Blueprints** from the left-hand menu, and click **Upload Blueprint**.
-
-   .. figure:: images/30.png
-
-#. Select **FiestaNoDB.json**.
-
-#. Update the **Blueprint Name** to include your USERXX. Even across different projects, Calm Blueprint names must be unique.
-
-#. Select *USERXX*\ -Project as the Calm project and click **Upload**.
-
-   .. figure:: images/31.png
-
-#. In order to launch the Blueprint you must first assign a network to the VM. Select the **NodeReact** Service, and in the **VM** Configuration menu on the right, select **Secondary** as the **NIC 1** network.
-
-   .. figure:: images/32a.png
-
-#. Click **Credentials** to define a private key used to authenticate to the CentOS VM that will be provisioned by the Blueprint.
-
-#. Expand the **CENTOS** credential and use your preferred SSH key, or paste in the following value as the **SSH Private Key**:
-
-   ::
-
-     -----BEGIN RSA PRIVATE KEY-----
-     MIIEowIBAAKCAQEAii7qFDhVadLx5lULAG/ooCUTA/ATSmXbArs+GdHxbUWd/bNG
-     ZCXnaQ2L1mSVVGDxfTbSaTJ3En3tVlMtD2RjZPdhqWESCaoj2kXLYSiNDS9qz3SK
-     6h822je/f9O9CzCTrw2XGhnDVwmNraUvO5wmQObCDthTXc72PcBOd6oa4ENsnuY9
-     HtiETg29TZXgCYPFXipLBHSZYkBmGgccAeY9dq5ywiywBJLuoSovXkkRJk3cd7Gy
-     hCRIwYzqfdgSmiAMYgJLrz/UuLxatPqXts2D8v1xqR9EPNZNzgd4QHK4of1lqsNR
-     uz2SxkwqLcXSw0mGcAL8mIwVpzhPzwmENC5OrwIBJQKCAQB++q2WCkCmbtByyrAp
-     6ktiukjTL6MGGGhjX/PgYA5IvINX1SvtU0NZnb7FAntiSz7GFrODQyFPQ0jL3bq0
-     MrwzRDA6x+cPzMb/7RvBEIGdadfFjbAVaMqfAsul5SpBokKFLxU6lDb2CMdhS67c
-     1K2Hv0qKLpHL0vAdEZQ2nFAMWETvVMzl0o1dQmyGzA0GTY8VYdCRsUbwNgvFMvBj
-     8T/svzjpASDifa7IXlGaLrXfCH584zt7y+qjJ05O1G0NFslQ9n2wi7F93N8rHxgl
-     JDE4OhfyaDyLL1UdBlBpjYPSUbX7D5NExLggWEVFEwx4JRaK6+aDdFDKbSBIidHf
-     h45NAoGBANjANRKLBtcxmW4foK5ILTuFkOaowqj+2AIgT1ezCVpErHDFg0bkuvDk
-     QVdsAJRX5//luSO30dI0OWWGjgmIUXD7iej0sjAPJjRAv8ai+MYyaLfkdqv1Oj5c
-     oDC3KjmSdXTuWSYNvarsW+Uf2v7zlZlWesTnpV6gkZH3tX86iuiZAoGBAKM0mKX0
-     EjFkJH65Ym7gIED2CUyuFqq4WsCUD2RakpYZyIBKZGr8MRni3I4z6Hqm+rxVW6Dj
-     uFGQe5GhgPvO23UG1Y6nm0VkYgZq81TraZc/oMzignSC95w7OsLaLn6qp32Fje1M
-     Ez2Yn0T3dDcu1twY8OoDuvWx5LFMJ3NoRJaHAoGBAJ4rZP+xj17DVElxBo0EPK7k
-     7TKygDYhwDjnJSRSN0HfFg0agmQqXucjGuzEbyAkeN1Um9vLU+xrTHqEyIN/Jqxk
-     hztKxzfTtBhK7M84p7M5iq+0jfMau8ykdOVHZAB/odHeXLrnbrr/gVQsAKw1NdDC
-     kPCNXP/c9JrzB+c4juEVAoGBAJGPxmp/vTL4c5OebIxnCAKWP6VBUnyWliFhdYME
-     rECvNkjoZ2ZWjKhijVw8Il+OAjlFNgwJXzP9Z0qJIAMuHa2QeUfhmFKlo4ku9LOF
-     2rdUbNJpKD5m+IRsLX1az4W6zLwPVRHp56WjzFJEfGiRjzMBfOxkMSBSjbLjDm3Z
-     iUf7AoGBALjvtjapDwlEa5/CFvzOVGFq4L/OJTBEBGx/SA4HUc3TFTtlY2hvTDPZ
-     dQr/JBzLBUjCOBVuUuH3uW7hGhW+DnlzrfbfJATaRR8Ht6VU651T+Gbrr8EqNpCP
-     gmznERCNf9Kaxl/hlyV5dZBe/2LIK+/jLGNu9EJLoraaCBFshJKF
-     -----END RSA PRIVATE KEY-----
-
-   .. figure:: images/33.png
-
-#. Click **Save** and click **Back** once the Blueprint has completed saving.
-
-#. Click **Launch** and fill out the following fields:
-
-   - **Name of the Application** - *USERXX*\ -Fiesta
-   - **db_password** - nutanix/4u
-   - **db_name** - *USERXX*\ -fiesta (as configured when you deployed through Era)
-   - **db_dialect** - mssql
-   - **db_domain_name** - ntnxlab.local
-   - **db_username** - Administrator
-   - **db_host_address** - The IP of your *USERXX*\ **-MSSQL2** VM
-
-   .. figure:: images/34.png
-
-#. Click **Create**.
-
-#. Select the **Audit** tab to monitor the deployment. This process should take < 5 minutes.
-
-   .. figure:: images/35.png
-
-#. Once the application status changes to **Running**, select the **Services** tab and select the **NodeReact** service to obtain the **IP Address** of your web server.
-
-   .. figure:: images/36.png
-
-#. Open \http://*NODEREACT-IP-ADDRESS:5001*/ in a new browser tab to access the **Fiesta** application.
-
-   .. figure:: images/37.png
-
-   Congratulations! You've completed the deployment of your production application.
+#. Select your *initials*\ **-fiesta_TM** Time Machine, and then click **Actions > Log Catch Up > Yes** to ensure the imported data has been committed to disk prior to the cloning operation in the next lab.
 
 Takeaways
 +++++++++

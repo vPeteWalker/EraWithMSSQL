@@ -13,9 +13,9 @@ Whereas with a Nutanix cluster and Era, provisioning and protecting a database s
 Source Microsoft SQL VM
 +++++++++++++++++++++++
 
-.. note:: Your `USERXX` designation is assigned by the SE leading the Bootcamp. Please do not proceed until this has been provided to you.
+.. note:: Your `UserXX` designation is assigned by the SE leading the Bootcamp. Please do not proceed until this has been provided to you.
 
-#. Log in to your *USERXX*\ **-MSSQLSourceVM** with the below credentials right-clicking on the VM name, and choosing **Launch Console**.
+#. Log in to your *UserXX*\ **-MSSQLSourceVM** with the below credentials by right-clicking on the VM name, and choosing **Launch Console**.
 
    - **Username** - Administrator
    - **Password** - Nutanix/4u
@@ -24,7 +24,7 @@ Source Microsoft SQL VM
 
 #. Disable Windows Firewall for all networks.
 
-#. Open SQL Server Managment Studio (SSMS), choose **Windows Authentication** from the *Authentication* drop-down, and click **Connect**.
+#. Open SQL Server Management Studio (SSMS), choose **Windows Authentication** from the *Authentication* drop-down, and click **Connect**.
 
 #. Verify you can browse the *SampleDB* database.
 
@@ -60,7 +60,7 @@ Source Microsoft SQL VM
 
   #. Disable Windows Firewall for all.
 
-  #. Open SQL Server Managment Studio (SSMS), choose **Windows Authentication** from the *Authentication* drop-down, and click **Connect**.
+  #. Open SQL Server Managment Studio (SSMS), choose **Windows Authentication** from the *Authentication* drop-down, and then click **Connect**.
 
   #. Verify you can browse the **SampleDB**.
 

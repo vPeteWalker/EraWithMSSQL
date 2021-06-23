@@ -19,7 +19,7 @@ Links
 Creating a Software Profile Version
 +++++++++++++++++++++++++++++++++++
 
-A software profile versions are created in Era to support patching of SQL Server database server instances. A software profile version can be created by uploading a SQL Server update executable. The SQL Server update can then be used to patch other database server VMs or when provisioning new database server VMs with the updated software profile.
+Software Profile Versions are created in Era to support patching of SQL Server database server instances. A Software Profile Version can be created simply by uploading a SQL Server update executable. The SQL Server update can then be used to patch other database server VMs or when provisioning new database server VMs with the updated Software Profile.
 
 #. Within Era, select **Profiles** from the drop-down menu.
 
@@ -36,6 +36,7 @@ A software profile versions are created in Era to support patching of SQL Server
       .. figure:: images/2.png
 
    - Wait for the upload to complete, and then click **Create**.
+   This should take approximately 3 minutes to complete.
 
 Updating a Software Profile Version
 +++++++++++++++++++++++++++++++++++
